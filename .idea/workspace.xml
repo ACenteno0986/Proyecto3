@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2c7c05d7-8234-4005-b76a-fa8dec728934" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/client/MyFS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/client/ClientController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/controller/SerializationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/controller/SerializationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/core/handler/CatHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/core/handler/CatHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/core/handler/CopyResponseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/core/handler/CopyResponseHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/core/handler/CreateHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/core/handler/CreateHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/core/handler/DirectResponseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/core/handler/DirectResponseHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/core/handler/ExportResponseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/core/handler/ExportResponseHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/core/handler/HelpHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/core/handler/HelpHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/core/handler/ImportResponseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/core/handler/ImportResponseHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/core/handler/ListResponseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/core/handler/ListResponseHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/core/handler/MkdirHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/core/handler/MkdirHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/core/handler/MoveResponseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/core/handler/MoveResponseHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/core/handler/QueryHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/core/handler/QueryHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/core/handler/QuitResponseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/core/handler/QuitResponseHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/core/handler/RemoveHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/core/handler/RemoveHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/core/handler/RenameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/core/handler/RenameHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/core/handler/ResponseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/core/handler/ResponseHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/core/handler/SearchResponseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/core/handler/SearchResponseHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/core/vfs/VFSFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/core/vfs/VFSFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/core/vfs/VisualDisk.java" beforeDir="false" afterPath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/core/vfs/VirtualDisk.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/server/ServerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/VFS-template/test/hk/edu/polyu/comp3222/vfs/test/HandlerTest/CatHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/VFS-template/test/hk/edu/polyu/comp3222/vfs/test/HandlerTest/CatHandlerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VFS-template/test/hk/edu/polyu/comp3222/vfs/test/HandlerTest/CopyHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/VFS-template/test/hk/edu/polyu/comp3222/vfs/test/HandlerTest/CopyHandlerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VFS-template/test/hk/edu/polyu/comp3222/vfs/test/HandlerTest/CreatHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/VFS-template/test/hk/edu/polyu/comp3222/vfs/test/HandlerTest/CreatHandlerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VFS-template/test/hk/edu/polyu/comp3222/vfs/test/HandlerTest/DirectHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/VFS-template/test/hk/edu/polyu/comp3222/vfs/test/HandlerTest/DirectHandlerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VFS-template/test/hk/edu/polyu/comp3222/vfs/test/HandlerTest/ExportHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/VFS-template/test/hk/edu/polyu/comp3222/vfs/test/HandlerTest/ExportHandlerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VFS-template/test/hk/edu/polyu/comp3222/vfs/test/HandlerTest/HelpHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/VFS-template/test/hk/edu/polyu/comp3222/vfs/test/HandlerTest/HelpHandlerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VFS-template/test/hk/edu/polyu/comp3222/vfs/test/HandlerTest/ImportHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/VFS-template/test/hk/edu/polyu/comp3222/vfs/test/HandlerTest/ImportHandlerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VFS-template/test/hk/edu/polyu/comp3222/vfs/test/HandlerTest/ListHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/VFS-template/test/hk/edu/polyu/comp3222/vfs/test/HandlerTest/ListHandlerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VFS-template/test/hk/edu/polyu/comp3222/vfs/test/HandlerTest/MKdirHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/VFS-template/test/hk/edu/polyu/comp3222/vfs/test/HandlerTest/MKdirHandlerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VFS-template/test/hk/edu/polyu/comp3222/vfs/test/HandlerTest/MoveHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/VFS-template/test/hk/edu/polyu/comp3222/vfs/test/HandlerTest/MoveHandlerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VFS-template/test/hk/edu/polyu/comp3222/vfs/test/HandlerTest/QueryHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/VFS-template/test/hk/edu/polyu/comp3222/vfs/test/HandlerTest/QueryHandlerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VFS-template/test/hk/edu/polyu/comp3222/vfs/test/HandlerTest/QuitHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/VFS-template/test/hk/edu/polyu/comp3222/vfs/test/HandlerTest/QuitHandlerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VFS-template/test/hk/edu/polyu/comp3222/vfs/test/HandlerTest/RemoveHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/VFS-template/test/hk/edu/polyu/comp3222/vfs/test/HandlerTest/RemoveHandlerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VFS-template/test/hk/edu/polyu/comp3222/vfs/test/HandlerTest/RenameHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/VFS-template/test/hk/edu/polyu/comp3222/vfs/test/HandlerTest/RenameHandlerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VFS-template/test/hk/edu/polyu/comp3222/vfs/test/HandlerTest/SearchHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/VFS-template/test/hk/edu/polyu/comp3222/vfs/test/HandlerTest/SearchHandlerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VFS-template/test/hk/edu/polyu/comp3222/vfs/test/VFSTest/VirtualDiskTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/VFS-template/test/hk/edu/polyu/comp3222/vfs/test/VFSTest/VirtualDiskTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/virtual_file_system$client.coverage" NAME="client Coverage Results" MODIFIED="1491656737472" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/virtual_file_system$CatHandlerTest_testcat.coverage" NAME="CatHandlerTest.testcat Coverage Results" MODIFIED="1491656853134" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>hk.edu.polyu.comp3222.vfs.test.HandlerTest.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/virtual_file_system$StatementCoverage.coverage" NAME="StatementCoverage Coverage Results" MODIFIED="1491721506972" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>hk.edu.polyu.comp3222.vfs.core.*</FILTER>
+    </SUITE>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="21WMMAcaOY9l1lFTgPmcIrTPMRl" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager" selected="Application.MainClient">
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <Java />
+      <Profilers>
+        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
+        <option name="GAPID_ENABLED" value="false" />
+        <option name="GAPID_DISABLE_PCS" value="false" />
+        <option name="SUPPORT_LIB_ENABLED" value="true" />
+        <option name="INSTRUMENTATION_ENABLED" value="true" />
+      </Profilers>
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+      <method />
+    </configuration>
+    <configuration name="MainClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="hk.edu.polyu.comp3222.vfs.client.MainClient" />
+      <module name="VFS-template" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hk.edu.polyu.comp3222.vfs.client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="client" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="hk.edu.polyu.comp3222.vfs.client.MyFS" />
+      <module name="VFS-template" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="server" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="hk.edu.polyu.comp3222.vfs.server.ServerController" />
+      <module name="VFS-template" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CatHandlerTest.testcat" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="VFS-template" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hk.edu.polyu.comp3222.vfs.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="hk.edu.polyu.comp3222.vfs.test.HandlerTest" />
+      <option name="MAIN_CLASS_NAME" value="hk.edu.polyu.comp3222.vfs.test.HandlerTest.CatHandlerTest" />
+      <option name="METHOD_NAME" value="testcat" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StatementCoverage" type="JUnit" factoryName="JUnit">
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hk.edu.polyu.comp3222.vfs.core.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="hk.edu.polyu.comp3222.vfs.test" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$MODULE_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="wholeProject" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <module name="" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.client" />
+      <item itemvalue="Application.server" />
+      <item itemvalue="JUnit.StatementCoverage" />
+      <item itemvalue="JUnit.CatHandlerTest.testcat" />
+      <item itemvalue="Application.MainClient" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MainClient" />
+        <item itemvalue="JUnit.CatHandlerTest.testcat" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2c7c05d7-8234-4005-b76a-fa8dec728934" name="Default" comment="" />
+      <created>1491565002199</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1491565002199</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1877" height="141" key="GridCell.Tab.0.bottom" timestamp="1638069499696">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="141" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1638069499696" />
+    <state width="1877" height="141" key="GridCell.Tab.0.center" timestamp="1638069499695">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="141" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1638069499695" />
+    <state width="1877" height="141" key="GridCell.Tab.0.left" timestamp="1638069499695">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="141" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1638069499695" />
+    <state width="1877" height="141" key="GridCell.Tab.0.right" timestamp="1638069499696">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="141" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1638069499696" />
+    <state width="1877" height="141" key="GridCell.Tab.1.bottom" timestamp="1638069499696">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="141" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1638069499696" />
+    <state width="1877" height="141" key="GridCell.Tab.1.center" timestamp="1638069499696">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="141" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1638069499696" />
+    <state width="1877" height="141" key="GridCell.Tab.1.left" timestamp="1638069499696">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="141" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1638069499696" />
+    <state width="1877" height="141" key="GridCell.Tab.1.right" timestamp="1638069499696">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="141" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1638069499696" />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+</project>

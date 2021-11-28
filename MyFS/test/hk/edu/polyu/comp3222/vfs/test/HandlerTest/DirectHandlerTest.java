@@ -1,0 +1,44 @@
+package hk.edu.polyu.comp3222.vfs.test.HandlerTest;
+
+/**
+ * Created by user on 2017/4/8.
+ */
+
+
+import fs.core.handler.DirectResponseHandler;
+
+import fs.core.fs.VirtualDisk;
+
+import org.junit.Before;
+import org.junit.Test;
+
+
+
+
+
+
+
+public class DirectHandlerTest {
+    private VirtualDisk mydisk;
+    private DirectResponseHandler myhandler;
+    private String[] cmd;
+    @Before
+    public void setup(){
+        mydisk = new VirtualDisk("test","test",13224);
+        mydisk.initializeFileSystem();
+        myhandler = new DirectResponseHandler();
+    }
+
+    @Test
+    public void testdircet(){
+      cmd = new String[]{"cd"};
+      myhandler.handlerResponse(cmd,mydisk,mydisk.getROOT_FS(),mydisk.getCurrentDir());
+        cmd = new String[]{"cd","1st"};
+        myhandler.handlerResponse(cmd,mydisk,mydisk.getROOT_FS(),mydisk.getCurrentDir());
+        cmd = new String[]{"cd","3rd"};
+        myhandler.handlerResponse(cmd,mydisk,mydisk.getROOT_FS(),mydisk.getCurrentDir());
+        cmd = new String[]{"cd","file3"};
+        myhandler.handlerResponse(cmd,mydisk,mydisk.getROOT_FS(),mydisk.getCurrentDir());
+    }
+
+}

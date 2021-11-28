@@ -1,0 +1,54 @@
+package hk.edu.polyu.comp3222.vfs.test.HandlerTest;
+
+/**
+ * Created by user on 2017/4/8.
+ */
+
+import fs.Util.IOService;
+import fs.core.handler.CopyResponseHandler;
+
+import fs.core.fs.VirtualDisk;
+
+import org.junit.Before;
+import org.junit.Test;
+
+
+
+
+
+
+
+public class CopyHandlerTest {
+    private VirtualDisk mydisk;
+    private CopyResponseHandler myhandler;
+    private IOService myios;
+    private String[] cmd;
+    @Before
+    public void setup(){
+        mydisk = new VirtualDisk("test","test",13224);
+        mydisk.initializeFileSystem();
+        myhandler = new CopyResponseHandler();
+    }
+
+@Test
+    public void testcopy(){
+    cmd = new String[]{"cp"};
+    myhandler.handlerResponse(cmd,mydisk,mydisk.getROOT_FS(),mydisk.getCurrentDir());
+    cmd = new String[]{"cp","file3","file3"};
+    myhandler.handlerResponse(cmd,mydisk,mydisk.getROOT_FS(),mydisk.getCurrentDir());
+    cmd = new String[]{"cp","file3","1st/file3"};
+    myhandler.handlerResponse(cmd,mydisk,mydisk.getROOT_FS(),mydisk.getCurrentDir());
+    cmd = new String[]{"cp","file4","root/"};
+    myhandler.handlerResponse(cmd,mydisk,mydisk.getROOT_FS(),mydisk.getCurrentDir());
+    cmd = new String[]{"cp","file3","file565"};
+    myhandler.handlerResponse(cmd,mydisk,mydisk.getROOT_FS(),mydisk.getCurrentDir());
+    cmd = new String[]{"cp","1st","5th"};
+    myhandler.handlerResponse(cmd,mydisk,mydisk.getROOT_FS(),mydisk.getCurrentDir());
+    cmd = new String[]{"cp","5th","2nd/new"};
+    myhandler.handlerResponse(cmd,mydisk,mydisk.getROOT_FS(),mydisk.getCurrentDir());
+}
+
+
+
+
+}

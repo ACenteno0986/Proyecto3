@@ -35,9 +35,7 @@ public class VirtualDisk implements Serializable{
 
         //root directory
         ROOT_FS = new VFSDirectory("", "root", new Date());
-        System.out.println(ROOT_FS);
         ROOT_PATH = ROOT_FS.getPath();
-        System.out.println(ROOT_PATH);
         currentDir = ROOT_FS;
 
         //initialization

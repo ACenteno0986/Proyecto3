@@ -52,13 +52,13 @@ public class SerializationController {
             FileInputStream fis;
             ObjectInputStream ois = null;
 
-            File file = new File(fsSerializedNamePrefix + name + ".fs");
+            File file = new File(fsSerializedNamePrefix + name);
 
             if (!file.exists() || !file.isFile())
                 return null;
 
             try {
-                fis = new FileInputStream(fsSerializedNamePrefix + name + ".fs");
+                fis = new FileInputStream(fsSerializedNamePrefix + name);
                 ois = new ObjectInputStream(fis);
                 return (VirtualDisk) ois.readObject();
             } finally {
@@ -83,7 +83,7 @@ public class SerializationController {
     public boolean deleteVFS(String name){
         try{
             boolean ifDelete;
-            File file = new File(fsSerializedNamePrefix + name + ".fs");
+            File file = new File(fsSerializedNamePrefix + name);
             if (!file.exists() || !file.isFile())
                 return false;
             ifDelete = file.delete();

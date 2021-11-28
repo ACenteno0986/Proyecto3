@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="format:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -20,9 +28,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c7c05d7-8234-4005-b76a-fa8dec728934" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/format_jar.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/client/MyFS.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/Util/ConsoleIO.java" beforeDir="false" afterPath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/Util/ConsoleIO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/client/ClientController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/controller/SerializationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/controller/SerializationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/core/handler/CatHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/VFS-template/src/hk/edu/polyu/comp3222/vfs/core/handler/CatHandler.java" afterDir="false" />
@@ -93,6 +103,10 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.19655173" />
+    <property name="settings.editor.selected.configurable" value="android.dex.compiler" />
   </component>
   <component name="RunManager" selected="Application.MainClient">
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
@@ -300,22 +314,26 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1877" height="273" key="GridCell.Tab.0.bottom" timestamp="1638077548529">
+    <state x="739" y="330" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1638132157871">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="273" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1638077548529" />
-    <state width="1877" height="273" key="GridCell.Tab.0.center" timestamp="1638077548529">
+    <state x="739" y="330" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1638132157871" />
+    <state width="1877" height="245" key="GridCell.Tab.0.bottom" timestamp="1638131237018">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="273" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1638077548529" />
-    <state width="1877" height="273" key="GridCell.Tab.0.left" timestamp="1638077548529">
+    <state width="1877" height="245" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1638131237018" />
+    <state width="1877" height="245" key="GridCell.Tab.0.center" timestamp="1638131237018">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="273" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1638077548529" />
-    <state width="1877" height="273" key="GridCell.Tab.0.right" timestamp="1638077548529">
+    <state width="1877" height="245" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1638131237018" />
+    <state width="1877" height="245" key="GridCell.Tab.0.left" timestamp="1638131237018">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="273" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1638077548529" />
+    <state width="1877" height="245" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1638131237018" />
+    <state width="1877" height="245" key="GridCell.Tab.0.right" timestamp="1638131237018">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="245" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1638131237018" />
     <state width="1877" height="141" key="GridCell.Tab.1.bottom" timestamp="1638069499696">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -332,6 +350,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="141" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1638069499696" />
+    <state x="461" y="185" width="1097" height="710" key="SettingsEditor" timestamp="1638132198930">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="461" y="185" width="1097" height="710" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1638132198930" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />

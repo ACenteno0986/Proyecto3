@@ -42,7 +42,7 @@ public class MyFS {
         themap.put("quit", new QuitResponseHandler());
     }
 
-    private String userName;
+    private String username;
     private String passwd;
 
 
@@ -54,24 +54,34 @@ public class MyFS {
     public void MyFS() throws IOException {
 
         DataInputStream in = new DataInputStream(System.in);
+        VirtualDisk disk = null;
+        String[] lineInput = null;
 
-        String username = ConsoleIO.readLine("Please input your username: ");
-        System.out.println(username);
+        while(true){
 
-        VirtualDisk disk = SerializationController.getInstance().deserialize(username);
+            String nextLine = ConsoleIO.readLine("--> ");
+            lineInput = nextLine.split(" ");
+            if(lineInput[0].contentEquals("format")){
+                SerializationController.getInstance().deserialize(lineInput[1]);
+                break;
+            }else{
+                System.out.println("Ejecute el comando format seguido por el nombre del File System");
+            }
+        }
+
 
         if (disk != null) {
             System.out.println("User exists, please input password:");
 
-            this.userName = username;
+            this.username = lineInput[1];
             this.passwd = disk.getPassword();
             int restAttemp = 3;
             while(true) {
                 String password;
-                if ((password = ConsoleIO.readLine("Please input your password: ")) != null) {
-                    ConsoleIO.printLine("Password: " + password);
+                if ((password = ConsoleIO.readLine("Ingrese contraseña para usuario: ")) != null) {
+
                     if (password.equals(passwd)) {
-                        System.out.println("Welcome, " + username);
+                        System.out.println("Bienvenido: " + username);
                         disk.setCurrentDir(disk.getROOT_FS());
                         RunOperations(disk);
 
@@ -86,16 +96,14 @@ public class MyFS {
             }
 
         }else{
-            System.out.println("User not existed, you may create a new one:");
+            System.out.println("El File System no existe. Creando nuevo...");
 
-            String newPasswd = ConsoleIO.readLine("Please input your password: ");
+            String newPasswd = ConsoleIO.readLine("Ingrese contraseña para usuario root: ");
             while(true) {
                 if (newPasswd != null) {
 
-                    ConsoleIO.printLine("SERVER SIDE: new password: " + newPasswd);
-
-                    int newDiskSize = Integer.parseInt(ConsoleIO.readLine("Please input size: "));
-                    disk = new VirtualDisk(username, newPasswd, newDiskSize);
+                    int newDiskSize = Integer.parseInt(ConsoleIO.readLine("Ingrese tamaño de la unidad: "));
+                    disk = new VirtualDisk("root", newPasswd, newDiskSize);
                     RunOperations(disk);
 
                 }

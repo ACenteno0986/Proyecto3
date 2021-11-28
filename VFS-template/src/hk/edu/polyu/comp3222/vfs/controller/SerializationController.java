@@ -9,7 +9,7 @@ import java.io.*;
 public class SerializationController {
     private static SerializationController instance;
 
-    private static final String fsSerializedNamePrefix = "db/";
+    private static final String fsSerializedNamePrefix = "VFS-template/db/";
 
     /**
      * get SerializationController instance via Singleton Design Pattern
@@ -30,7 +30,7 @@ public class SerializationController {
             FileOutputStream fos;
             ObjectOutputStream oos = null;
             try {
-                fos = new FileOutputStream(fsSerializedNamePrefix + fileSystem.getName() + ".vfs");
+                fos = new FileOutputStream(fsSerializedNamePrefix + fileSystem.getName() + ".fs");
                 oos = new ObjectOutputStream(fos);
                 oos.writeObject(fileSystem);
             } finally {
@@ -53,9 +53,7 @@ public class SerializationController {
             ObjectInputStream ois = null;
 
             File file = new File(fsSerializedNamePrefix + name + ".fs");
-            //file.createNewFile();
-            File file2 = new File("db/test.vfs");
-            file2.exists();
+
             if (!file.exists() || !file.isFile())
                 return null;
 
@@ -85,7 +83,7 @@ public class SerializationController {
     public boolean deleteVFS(String name){
         try{
             boolean ifDelete;
-            File file = new File(fsSerializedNamePrefix + name + ".vfs");
+            File file = new File(fsSerializedNamePrefix + name + ".fs");
             if (!file.exists() || !file.isFile())
                 return false;
             ifDelete = file.delete();

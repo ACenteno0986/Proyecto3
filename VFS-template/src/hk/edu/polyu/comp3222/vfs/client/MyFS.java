@@ -65,25 +65,30 @@ public class MyFS {
 
             this.userName = username;
             this.passwd = disk.getPassword();
-
+            int restAttemp = 3;
             while(true) {
                 String password;
-                if ((password = input.readLine()) != null) {
-                    ConsoleIO.printLine("SERVER SIDE: " + password);
+                if ((password = ConsoleIO.readLine("Please input your password: ")) != null) {
+                    ConsoleIO.printLine("Password: " + password);
                     if (password.equals(passwd)) {
                         System.out.println("Welcome, " + username);
+                        disk.setCurrentDir(disk.getROOT_FS());
+                        RunOperations(disk);
 
                     } else {
-                        output.println("Login Failed");
+                        System.out.println("Contraseña incorrrecta");
+                        System.out.println("Intentos restantes: " + restAttemp);
+                        restAttemp--;
                     }
-                    break;
+                    if(restAttemp < 0)
+                        break;
                 }
             }
 
         }else{
             System.out.println("User not existed, you may create a new one:");
 
-            String newPasswd = ConsoleIO.readLine("Please input your username: ");
+            String newPasswd = ConsoleIO.readLine("Please input your password: ");
             while(true) {
                 if (newPasswd != null) {
 
@@ -91,36 +96,47 @@ public class MyFS {
 
                     int newDiskSize = Integer.parseInt(ConsoleIO.readLine("Please input size: "));
                     disk = new VirtualDisk(username, newPasswd, newDiskSize);
+                    RunOperations(disk);
 
-
-                    break;
                 }
             }
         }
+    }
+
+    private void RunOperations( VirtualDisk disk){
+        System.out.println(disk.getCurrentDir());
         String[] cmd_segments;
         ConsoleIO.printLine(disk.getName());
         while (true){
             ConsoleIO.printLine("Current Working Directory is:");
-            ConsoleIO.printLine(disk.getCurrentDir().getPath());
+            if(disk.getCurrentDir() != null){
+
+                    ConsoleIO.printLine(disk.getCurrentDir().getPath());
+
+            }else{
+            if (commandStack != null) {
+                for (ResponseHandler e : commandStack) {
+                    disk.setCurrentDir((VFSDirectory) e.handlerOnServer());
+                }
+                SerializationController.getInstance().serialize(disk);
+            }}
+
             cmd_segments = ConsoleIO.readLine("-->").split(" ");
             ResponseHandler cmd = themap.get(cmd_segments[0]);
 
 
             /*-------------------command line implementation--------------------------*/
             if(cmd != null){
-
                 disk.setCurrentDir((VFSDirectory) cmd.handlerResponse(cmd_segments, disk,disk.getROOT_FS(), disk.getCurrentDir()));
                 commandStack.add(cmd);
                 if(disk.getCurrentDir() == null){
-                    //return "save";
+
                 }
             }else{
                 ConsoleIO.printLine("wrong command, try again");
             }
 
         }
-            //output.close();
-
     }
 
 }

@@ -5,7 +5,7 @@ import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.io.Serializable;
 /**
- * Created by selcuk on 23.01.2017.
+ *
  */
 public abstract class FSunit implements Serializable{
 
@@ -21,10 +21,7 @@ public abstract class FSunit implements Serializable{
     private int groupAccessLvl = 7;
 
     /**
-     * @param path: the path of this FSunit
-     * @param name: the name of this FSunit
-     * @param dateCreated
-     * This is something
+     *
      */
     protected FSunit(String path, String name, Date dateCreated) {
         this.path = path;
@@ -32,42 +29,31 @@ public abstract class FSunit implements Serializable{
         this.dateCreated = dateCreated;
 
     }
-/*
-    /**
-     * abstract list method
-     * @param detailed: if this list should be detailed
-     * @param ioservice: ioservice for this method
 
-    protected abstract void list(boolean detailed, IOService ioservice);
-*/
     /**
-     * get size method
-     * @return return the size of this FSunit
+     *
      */
     protected abstract int getSize();
 
     /**
-     * get path method
-     * @return path of this FSunit in String format
+     *
      */
     public String getPath(){
         return path;
     }
 
     /**
-     * getName method
-     * @return name of this FSunit
+     *
      */
     public String getName(){
         if(name == null){
-            return ".NIL";
+            return "noname";
         }
         return name;
     }
 
     /**
-     * set name method
-     * @param name name to be set for this VFS unit
+     *
      */
     public void setName(String name){
         int nameLength = this.name.length();
@@ -85,8 +71,7 @@ public abstract class FSunit implements Serializable{
     }
 
     /**
-     * get date created method
-     * @return data created in string format
+     *
      */
     public String getDateCreated() {
         return dateFormat.format(dateCreated);

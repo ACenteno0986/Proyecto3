@@ -12,8 +12,7 @@ public class SerializationController {
     private static final String fsSerializedNamePrefix = "MyFS/db/";
 
     /**
-     * get SerializationController instance via Singleton Design Pattern
-     * @return return the instance
+     *
      */
     public static SerializationController getInstance() {
         if (instance == null)
@@ -22,8 +21,7 @@ public class SerializationController {
     }
 
     /**
-     * serialize the java object
-     * @param fileSystem visual disk to be serialized
+     *
      */
     public void serialize(VirtualDisk fileSystem) {
         try {
@@ -43,9 +41,7 @@ public class SerializationController {
     }
 
     /**
-     * deserialize the visual disk
-     * @param name name of the to-be-deserialized visual disk
-     * @return returnt the deserialized visual disk
+     *
      */
     public VirtualDisk deserialize(String name) {
         try {
@@ -75,9 +71,7 @@ public class SerializationController {
     }
 
     /**
-     * delete Visual File Disk Method
-     * @param name name of the virtual file user want to delete
-     * @return return a boolean value to see if this VFS is deleted
+     *
      */
     public boolean deleteVFS(String name){
         try{

@@ -12,7 +12,7 @@ import java.io.*;
 import java.util.*;
 
 /**
- * Created by Isaac on 1/24/17.
+ *
  */
 public class MyFS {
 
@@ -22,7 +22,7 @@ public class MyFS {
     private BufferedReader input;
 
     /**
-     * create the map for retriveing responsehandler while avoid multi-(if else)s
+     *
      */
     private static final Map<String, ResponseHandler> themap = new HashMap<>();
     static{
@@ -34,8 +34,7 @@ public class MyFS {
         themap.put("touch", new CreateHandler());
         themap.put("cat", new CatHandler());
         themap.put("rm", new RemoveHandler());
-        themap.put("rename", new RenameHandler());
-        themap.put("quit", new QuitResponseHandler());
+        themap.put("exit", new QuitResponseHandler());
         themap.put("useradd", new UserHandler() );
         themap.put("whoami", new WhoamiHandler());
         themap.put("groupadd", new GroupHandler());
@@ -60,9 +59,7 @@ public class MyFS {
 
 
     /**
-     * user need to output command to server for synchronization
-     * @return the client socket
-     * @throws IOException IO exception
+     *
      */
     public void MyFS(String fsName) throws IOException {
 
@@ -147,7 +144,7 @@ public class MyFS {
         while (true){
 
             if(disk.getCurrentDir() != null){
-                //ConsoleIO.printLine(disk.getCurrentDir().getPath());
+
 
             }else{
             if (commandStack != null) {
@@ -168,7 +165,7 @@ public class MyFS {
             ResponseHandler cmd = themap.get(cmd_segments[0]);
 
 
-            /*-------------------command line implementation--------------------------*/
+
             if(cmd != null){
                 disk.setCurrentDir((FSDirectory) cmd.handlerResponse(cmd_segments, disk,disk.getROOT_FS(), disk.getCurrentDir()));
                 commandStack.add(cmd);
@@ -176,7 +173,7 @@ public class MyFS {
 
                 }
             }else{
-                ConsoleIO.printLine("wrong command, try again");
+                ConsoleIO.printLine("comando equivocado intente de nuevo");
             }
 
         }

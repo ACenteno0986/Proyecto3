@@ -5,7 +5,7 @@ import fs.Util.ConsoleIO;
 import fs.core.fs.*;
 
 /**
- * Created by Isaac on 1/27/17.
+ *
  */
 public class CatHandler extends ResponseHandler{
     @Override
@@ -14,15 +14,15 @@ public class CatHandler extends ResponseHandler{
         FSunit tempUnit;
         FSFile tempFile;
         if(cmd.length < 2 ){
-            ConsoleIO.printLine("cat command requires at least one argument");
+            ConsoleIO.printLine("cat rquiere al menos 1 argumento");
         }else {
             String[] searchPath = cmd[1].split("/");
             tempUnit = CurrentDir.getItem(searchPath);
             if (tempUnit == null) {
-                ConsoleIO.printLine("No such file exists in current working directory");
+                ConsoleIO.printLine("No existe el archivo en el directorio actual");
             } else {
                 if (tempUnit.getClass() == FSDirectory.class) {
-                    ConsoleIO.printLine("Target file is a directory. cat command not applicable");
+                    ConsoleIO.printLine("El archivo objetivo es un directorio cat no aplica");
                 }else {
 
                     tempFile = (FSFile) tempUnit;

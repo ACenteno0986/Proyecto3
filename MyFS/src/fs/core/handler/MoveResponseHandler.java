@@ -11,16 +11,16 @@ import java.util.Arrays;
 import java.util.Date;
 
 /**
- * Created by Isaac on 1/27/17.
+ *
  */
 public class MoveResponseHandler extends ResponseHandler{
     @Override
     public FSunit handlerResponse(String[] cmd, VirtualDisk currentDisk, FSDirectory Root, FSDirectory CurrentDir){
-        ConsoleIO.printLine("This is the mv handler.");
+
         if (cmd.length != 3){
-            ConsoleIO.printLine("Move command requires two arguments");
+            ConsoleIO.printLine("Move requiere al menos 2 argumentos");
         } else if(cmd[1].equals(cmd[2])){
-            ConsoleIO.printLine("two argument shouldn't be the same");
+            ConsoleIO.printLine("los argumentos no pueden ser iguales");
         } else{
 
             FSunit tempUnit = Root.getItemByPath((cmd[2]+"/"),Root);

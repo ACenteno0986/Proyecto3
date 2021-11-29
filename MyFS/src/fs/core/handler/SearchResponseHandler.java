@@ -26,9 +26,7 @@ public class SearchResponseHandler extends ResponseHandler{
     }
 
     /**
-     * search a single file inside
-     * @param itemName name of target file
-     * @param dir directory to be searched
+     *
      */
     public void searchResult(String itemName, FSDirectory dir){
         FSunit fileSystemUnit = dir.getItem(itemName.split("/"));

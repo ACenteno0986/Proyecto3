@@ -6,31 +6,26 @@ import fs.Util.ConsoleIO;
 import java.util.*;
 
 /**
- * Created by Isaac on 1/23/17.
+ *
  */
 public class FSDirectory extends FSunit {
     private final Map<String, FSunit> dirContent = new LinkedHashMap<>();
     /**
-     * Default constructor.
-     * @param sourcePath sourcePath from parent directory
-     * @param name name of this vfs directory
-     * @param dateCreated date created of this FSDirectory
+     *
      */
     public FSDirectory(String sourcePath, String name, Date dateCreated){
         super(sourcePath + name + "/", name, dateCreated);
     }
 
     /**
-     * get directory content method
-     * @return the content of directory
+     *
      */
     public Map<String, FSunit> getDirContent() {
         return dirContent;
     }
 
     /**
-     * list all content inside this directory
-     * @param detailed if detailed content is shown
+     *
      */
     public void list(boolean detailed) {
 
@@ -117,12 +112,10 @@ public class FSDirectory extends FSunit {
     }
 
     /**
-     * get item from current directory method
-     * @param itemname string array of the path & name of target item
-     * @return return the target item or null if not found
+     *
      */
     public FSunit getItem(String[] itemname){
-        //final Iterator<Map.Entry<String, FSunit>> iterator = dirContent.entrySet().iterator();
+
         FSunit fileSystemUnit;
         int level = 0;
         for (String key:dirContent.keySet()) {
@@ -156,10 +149,7 @@ public class FSDirectory extends FSunit {
     }
 
     /**
-     * retrive item from current directory by path
-     * @param path path of the target item
-     * @param root to-be-searched directory
-     * @return return the search result
+     *
      */
     public FSunit getItemByPath(String path, FSDirectory root) {
         if (path.equals(root.getPath()))
@@ -167,14 +157,14 @@ public class FSDirectory extends FSunit {
 
         FSunit fileSystemUnit;
 
-        // check first whether the object with the specified path exists in source folder
+
         if ((fileSystemUnit = root.getDirContent().get(path)) != null) {
             return fileSystemUnit;
         }
 
-        // if not, deep check every single entry in the current directory
+
         for (FSunit value : root.getDirContent().values()) {
-            //ConsoleIO.printLine(value.getPath());
+
             if (value.getClass() == FSDirectory.class) {
                 fileSystemUnit = getItemByPath(path, (FSDirectory) value);
             } else {

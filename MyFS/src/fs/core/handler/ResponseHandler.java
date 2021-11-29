@@ -8,7 +8,7 @@ import fs.core.fs.VirtualDisk;
 import java.io.Serializable;
 
 /**
- * Created by Isaac on 1/24/17.
+ *
  *
  */
 public abstract class ResponseHandler implements Serializable{
@@ -19,22 +19,12 @@ public abstract class ResponseHandler implements Serializable{
     private VirtualDisk currentDisk;
 
     /**
-     * method to handler specific command
-     * @param cmd cmd array from user input
-     * @param currentDisk current visual disk in use
-     * @param root root directory in current visual disk
-     * @param CurrentDir current working directory
-     * @return current directory after command is handled
+     *
      */
     public abstract FSunit handlerResponse(String[] cmd, VirtualDisk currentDisk, FSDirectory root, FSDirectory CurrentDir);
 
     /**
-     * save the handler's state for serialization
-     * @param cmd cmd array from user input
-     * @param root root directory in current visual disk
-     * @param CurrentDir current working directory
-     * @param currentDisk current working disk
-     * @return current directory after command is handled
+     *
      */
     public FSDirectory saveState(String[] cmd, VirtualDisk currentDisk, FSDirectory root, FSDirectory CurrentDir){
         this.cmd = cmd;
@@ -46,8 +36,7 @@ public abstract class ResponseHandler implements Serializable{
     }
 
     /**
-     * handler response on server with pre-saved params
-     * @return modified vfs directory
+     *
      */
     public FSunit handlerOnServer(){
         return handlerResponse(this.cmd,this.currentDisk, this.root, this.CurrentDir);

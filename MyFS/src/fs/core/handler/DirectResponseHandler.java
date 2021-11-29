@@ -7,12 +7,12 @@ import fs.core.fs.FSunit;
 import fs.core.fs.VirtualDisk;
 
 /**
- * Created by Isaac on 1/27/17.
+ *
  */
 public class DirectResponseHandler extends ResponseHandler{
     @Override
     public FSunit handlerResponse(String[] cmd, VirtualDisk currentDisk, FSDirectory Root, FSDirectory CurrentDir){
-        //ioService.printLine(String.valueOf(cmd.length));
+
         this.saveState(cmd, currentDisk, Root, CurrentDir);
         if(cmd.length == 1){
             CurrentDir = Root;
@@ -24,14 +24,14 @@ public class DirectResponseHandler extends ResponseHandler{
                 String newDir = "";
 
                 for(int i =0; i<newDirList.length-1;i++ ){
-                    //System.out.println("curDir: "+ newDirList[i]);
+
                     newDir += newDirList[i]+"/";
                 }
-                //System.out.println("me devuelvo a: "+newDir);
+
                 String[] fsName = currentDisk.getFsName().split("\\.");
 
                 if(newDir.equals(fsName[0]+"/")){
-                    //System.out.println("estoy en root");
+
                     CurrentDir = Root;
                 }else{
                     String[] newDirList2 = newDir.split("/");

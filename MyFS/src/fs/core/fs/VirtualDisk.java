@@ -13,7 +13,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * Created by Isaac on 2/15/17.
+ *
  */
 public class VirtualDisk implements Serializable{
     private final FSDirectory ROOT_FS;
@@ -30,10 +30,7 @@ public class VirtualDisk implements Serializable{
     private FSDirectory currentDir;
 
     /**
-     * constructor of visual disk
-     * @param username username of the user of this visual disk
-     * @param password password of the user of this visual disk
-     * @param diskSize disk size of this visual disk
+     *
      */
     public VirtualDisk(String fsName, String password, int diskSize, int blockSize) {
         //global variable
@@ -63,7 +60,7 @@ public class VirtualDisk implements Serializable{
     }
 
     /**
-     * initialization of this Visual File System
+     *
      */
     public void initializeFileSystem(){
         FSDirectory firstFolder = new FSDirectory(ROOT_PATH, "HOME", new Date());
@@ -72,8 +69,7 @@ public class VirtualDisk implements Serializable{
     }
 
     /**
-     * get name method
-     * @return the name of this visual disk
+     *
      */
     public String getName(){
         return this.currentUser;
@@ -81,32 +77,28 @@ public class VirtualDisk implements Serializable{
     public void setCurrentUser(String currentUser){this.currentUser = currentUser;}
 
     /**
-     * get size method
-     * @return the size of this visual disk
+     *
      */
     public int getSize(){
         return this.diskSize;
     }
 
     /**
-     * current directory of this visual disk
-     * @return current directory
+     *
      */
     public FSDirectory getCurrentDir(){
         return currentDir;
     }
 
     /**
-     * get root method
-     * @return root directory of this visual disk
+     *
      */
     public FSDirectory getROOT_FS(){
         return ROOT_FS;
     }
 
     /**
-     * set current directory method
-     * @param currentDir VFS directory to be set as the current directory
+     *
      */
     public void setCurrentDir(FSDirectory currentDir){
         this.currentDir = currentDir;

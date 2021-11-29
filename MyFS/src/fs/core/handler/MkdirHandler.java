@@ -9,19 +9,19 @@ import java.util.Arrays;
 import java.util.Date;
 
 /**
- * Created by Isaac on 1/27/17.
+ *
  */
 public class MkdirHandler extends ResponseHandler{
     @Override
     public FSunit handlerResponse(String[] cmd, VirtualDisk currentDisk, FSDirectory root, FSDirectory CurrentDir){
 
-        
+
         if(cmd.length != 2){
-            ConsoleIO.printLine("mkdir command requires one argument");
+            ConsoleIO.printLine("mkdir requiere 1 argumento");
         }else {
             String[] sourcePath = cmd[1].split("/");
             if(CurrentDir.getItem(sourcePath) != null){
-                ConsoleIO.printLine("directory already exists!");
+                ConsoleIO.printLine("directorio ya existe");
             }else {
                 if(sourcePath.length > 1) {
                     String fileName = sourcePath[sourcePath.length - 1];

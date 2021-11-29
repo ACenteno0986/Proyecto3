@@ -162,11 +162,6 @@ public class VirtualDisk implements Serializable{
     public void rmOpenFile(FSFile file) {
         this.openFiles.remove(file);
     }
-<<<<<<< HEAD
-    public String getFsName() {
-        return fsName;
-    }
-=======
 
     public String getFsName() {
         return fsName;
@@ -179,5 +174,4 @@ public class VirtualDisk implements Serializable{
     public void setDiskUsage(int diskUsage) {
         this.diskUsage += diskUsage;
     }
->>>>>>> 5f9ffdeea5f5a9518c0bbbae196e749a01763093
 }

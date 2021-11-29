@@ -18,7 +18,7 @@ import java.util.List;
 public class VirtualDisk implements Serializable{
     private final FSDirectory ROOT_FS;
     private final String ROOT_PATH;
-    private String username, password;
+    private String currentUser;
     private List<FSUser> users;
     private int diskSize;
     private int blockSize;
@@ -33,8 +33,7 @@ public class VirtualDisk implements Serializable{
      */
     public VirtualDisk(String username, String password, int diskSize, int blockSize) {
         //global variable
-        this.username = username;
-        this.password = password;
+        this.currentUser = username;
         this.diskSize = diskSize;
         this.blockSize = blockSize;
         this.users = new ArrayList<>();
@@ -66,8 +65,9 @@ public class VirtualDisk implements Serializable{
      * @return the name of this visual disk
      */
     public String getName(){
-        return this.username;
+        return this.currentUser;
     }
+    public void setCurrentUser(String currentUser){this.currentUser = currentUser;}
 
     /**
      * get size method
@@ -101,14 +101,6 @@ public class VirtualDisk implements Serializable{
         this.currentDir = currentDir;
     }
 
-    /**
-     * returnt the password of this visual disk
-     * @return password of this visual disk
-     */
-    public String getPassword(){
-        return this.password;
-    }
-
     public void addToUsers(FSUser user) {
         this.users.add(user);
     }
@@ -117,5 +109,18 @@ public class VirtualDisk implements Serializable{
             System.out.println("Usuario: "+user.getUsername());
             System.out.println("Nombre: "+user.getFullname());
         }
+
+    }
+    public List<FSUser> getUsers() {
+        return users;
+    }
+
+    public FSUser UserExist(String validateUser){
+        for (FSUser user: users) {
+            if(user.getUsername().equals(validateUser)){
+                return user;
+            }
+        }
+        return null;
     }
 }

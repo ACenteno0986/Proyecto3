@@ -91,7 +91,7 @@ public abstract class FSunit implements Serializable{
     }
     @Override
     public String toString(){
-        return name + " - " + path + " - " + getDateCreated();
+        return path;
     }
 }
 

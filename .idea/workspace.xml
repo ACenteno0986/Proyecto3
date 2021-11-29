@@ -28,8 +28,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c7c05d7-8234-4005-b76a-fa8dec728934" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/MyFS/src/fs/core/handler/SuHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyFS/db/root.fs" beforeDir="false" afterPath="$PROJECT_DIR$/MyFS/db/root.fs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyFS/src/fs/client/MyFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/MyFS/src/fs/client/MyFS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyFS/src/fs/controller/SerializationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MyFS/src/fs/controller/SerializationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyFS/src/fs/core/fs/FSunit.java" beforeDir="false" afterPath="$PROJECT_DIR$/MyFS/src/fs/core/fs/FSunit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyFS/src/fs/core/fs/VirtualDisk.java" beforeDir="false" afterPath="$PROJECT_DIR$/MyFS/src/fs/core/fs/VirtualDisk.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/format_jar/VFS-template.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/format_jar/VFS-template.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -271,6 +277,28 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="765" y="241" key="#com.intellij.ide.util.MemberChooser" timestamp="1638150373725">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="765" y="241" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1638150373725" />
+    <state width="938" height="163" key="GridCell.Tab.0.bottom" timestamp="1638153209766">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="938" height="163" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1638153209766" />
+    <state width="938" height="163" key="GridCell.Tab.0.center" timestamp="1638153209766">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="938" height="163" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1638153209766" />
+    <state width="938" height="163" key="GridCell.Tab.0.left" timestamp="1638153209766">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="938" height="163" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1638153209766" />
+    <state width="938" height="163" key="GridCell.Tab.0.right" timestamp="1638153209766">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="938" height="163" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1638153209766" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />

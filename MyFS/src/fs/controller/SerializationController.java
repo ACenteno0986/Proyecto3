@@ -66,8 +66,7 @@ public class SerializationController {
                     ois.close();
             }
         } catch (InvalidClassException ignored) {
-            System.out.println("\nERROR: Your .vfs backup is outdated! " +
-                    "Please, delete it before launch the program!");
+            System.out.println("\nERROR: Hubo un problema al cargar el File System. Por favor eliminelo antes de iniciar el programa.");
             System.exit(0);
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();

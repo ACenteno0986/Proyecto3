@@ -75,6 +75,14 @@ public abstract class FSunit implements Serializable{
         this.name = name;
         this.path = tempPath + "/" + name + "/";
     }
+    public void setNameFile(String name){
+
+        int nameLength = this.name.length();
+        String tempPath = this.path.substring(0, this.getPath().length() - 1 - nameLength);
+        this.name = name;
+        this.path = tempPath + "/" + name ;
+
+    }
 
     /**
      * get date created method
@@ -129,6 +137,10 @@ public abstract class FSunit implements Serializable{
 
     public void setGroupAccessLvl(int groupAccessLvl) {
         this.groupAccessLvl = groupAccessLvl;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
     }
 }
 

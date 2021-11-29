@@ -54,6 +54,18 @@ public class RemoveHandler extends ResponseHandler{
                     FSDirectory tempDir = (FSDirectory) tempUnit;
                     for (Iterator<Map.Entry<String, FSunit>> it = tempDir.getDirContent().entrySet().iterator(); it.hasNext();) {
                         Map.Entry<String, FSunit> item = it.next();
+
+                        if(item.getValue().getClass() == FSDirectory.class){
+                            rmdir = (FSDirectory) item.getValue();
+                            int size1 = -rmdir.getSize();
+                            currentDisk.setDiskUsage(size1);
+                        }
+                        else{
+                            rmfile = (FSFile) item.getValue();
+                            int size2 = -rmfile.getSize();
+                            currentDisk.setDiskUsage(size2);
+
+                        }
                         it.remove();
                     }
                 }

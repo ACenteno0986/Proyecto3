@@ -14,8 +14,8 @@ import java.util.Date;
 public class MkdirHandler extends ResponseHandler{
     @Override
     public FSunit handlerResponse(String[] cmd, VirtualDisk currentDisk, FSDirectory root, FSDirectory CurrentDir){
-        ConsoleIO.printLine("This is the mkdir handler.");
-        //this.saveState(cmd, currentDisk, root, CurrentDir);
+
+        
         if(cmd.length != 2){
             ConsoleIO.printLine("mkdir command requires one argument");
         }else {

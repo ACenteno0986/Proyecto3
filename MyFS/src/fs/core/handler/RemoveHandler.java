@@ -7,6 +7,9 @@ import fs.core.fs.FSFile;
 import fs.core.fs.FSunit;
 import fs.core.fs.VirtualDisk;
 
+import java.util.Iterator;
+import java.util.Map;
+
 /**
  * Created by Isaac on 2/17/17.
  */
@@ -39,7 +42,21 @@ public class RemoveHandler extends ResponseHandler{
         }
         if(cmd.length == 3){
             if(cmd[1].equals("-R") || cmd[1].equals("-r")){
-                System.out.println("argumento: "+cmd[1].split("/"));
+
+                String[] dirToSearch = cmd[2].split("/");
+
+                cmd[2] +="/";
+                FSunit tempUnit = root.getItemByPath(cmd[2],root);
+                if(tempUnit == null || tempUnit.getClass() == FSFile.class){
+                    ConsoleIO.printLine("No existe el directorio o es un archivo");
+                }else{
+
+                    FSDirectory tempDir = (FSDirectory) tempUnit;
+                    for (Iterator<Map.Entry<String, FSunit>> it = tempDir.getDirContent().entrySet().iterator(); it.hasNext();) {
+                        Map.Entry<String, FSunit> item = it.next();
+                        it.remove();
+                    }
+                }
 
             }else{
                 System.out.println("Error en el argumento 1");

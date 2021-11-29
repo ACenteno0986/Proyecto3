@@ -22,8 +22,10 @@ public class DirectResponseHandler extends ResponseHandler{
 
                 String[] newDirList = CurrentDir.getPath().split("/");
                 String newDir = "";
+
                 for(int i =0; i<newDirList.length-1;i++ ){
-                    newDir = newDirList[i]+"/";
+                    //System.out.println("curDir: "+ newDirList[i]);
+                    newDir += newDirList[i]+"/";
                 }
                 //System.out.println("me devuelvo a: "+newDir);
                 String[] fsName = currentDisk.getFsName().split("\\.");
@@ -33,7 +35,7 @@ public class DirectResponseHandler extends ResponseHandler{
                     CurrentDir = Root;
                 }else{
                     String[] newDirList2 = newDir.split("/");
-                    FSunit fsunitto = Root.getItem(newDirList2);
+                    FSunit fsunitto = Root.getItemByPath(newDir,Root);
                     if (fsunitto == null) {
                         ConsoleIO.printLine("Error al ejecutar el comando con ..");
 

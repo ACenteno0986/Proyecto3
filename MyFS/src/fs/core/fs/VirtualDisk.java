@@ -160,4 +160,7 @@ public class VirtualDisk implements Serializable{
     public void rmOpenFile(FSFile file) {
         this.openFiles.remove(file);
     }
+    public String getFsName() {
+        return fsName;
+    }
 }

@@ -6,7 +6,7 @@ import fs.core.fs.*;
 public class UserHandler extends ResponseHandler {
     @Override
     public FSunit handlerResponse(String[] cmd, VirtualDisk currentDisk, FSDirectory root, FSDirectory CurrentDir) {
-        if(cmd.length > 3){
+        if(cmd.length > 3 || cmd.length < 2){
             ConsoleIO.printLine("useradd argumentos invalidos");
         }
         else if(cmd.length == 2){

@@ -36,10 +36,17 @@ public class FSDirectory extends FSunit {
 
         final Iterator<Map.Entry<String, FSunit>> iterator = dirContent.entrySet().iterator();
         FSunit fileSystemUnit;
-
+        String tipo = "";
         while (iterator.hasNext()) {
             fileSystemUnit = iterator.next().getValue();
-            ConsoleIO.printLine(fileSystemUnit.toString());
+            if(fileSystemUnit.getClass() == FSDirectory.class){
+                tipo = " -> Directorio";
+            }else{
+                tipo = "-> Archivo";
+            }
+            ConsoleIO.printLine(fileSystemUnit.toString()+tipo);
+
+
 
         }
     }

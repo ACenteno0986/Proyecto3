@@ -156,8 +156,15 @@ public class MyFS {
                 //}
                 SerializationController.getInstance().serialize(disk);
             }}
+            if(disk.getCurrentDir() == null){
+                System.exit(0);
+            }
+            String cmd_in = ConsoleIO.readLine(disk.getName() + "@" + disk.getCurrentDir() + ": ");
+            cmd_segments = cmd_in.split(" ");
+            if(cmd_segments[0].equals("touch")){
+                cmd_segments[2] = cmd_in.split("\"")[1];
+            }
 
-            cmd_segments = ConsoleIO.readLine(disk.getName() + "@" + disk.getCurrentDir() + ": ").split(" ");
             ResponseHandler cmd = themap.get(cmd_segments[0]);
 
 

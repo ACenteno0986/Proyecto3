@@ -26,18 +26,8 @@ public class CatHandler extends ResponseHandler{
                 }else {
 
                     tempFile = (FSFile) tempUnit;
-                    String userAct = currentDisk.getName();
-                    FSGroup group = currentDisk.UserExist(currentDisk.getName()).GroupExist(tempFile.getGroup());
 
-                    if((userAct.equals("root")) || (userAct.equals(tempFile.getOwner()) &&
-                            (tempFile.getOwnerAccessLvl() == 4 || tempFile.getOwnerAccessLvl() == 5 ||
-                                    tempFile.getOwnerAccessLvl() == 6 || tempFile.getOwnerAccessLvl() == 7))){
-                        ConsoleIO.printLine(tempFile.getContent());
-
-                    }else if(((group != null) ||
-                            (currentDisk.UserExist(currentDisk.getName()).getPrimaryGroups().getName().equals(tempFile.getGroup()))
-                                    && (tempFile.getGroupAccessLvl() == 4 || tempFile.getGroupAccessLvl() == 5
-                                    || tempFile.getGroupAccessLvl() == 6 || tempFile.getGroupAccessLvl() == 7))){
+                    if(ValidateAccess(tempUnit, currentDisk)){
                         ConsoleIO.printLine(tempFile.getContent());
 
                     }else{
@@ -49,6 +39,28 @@ public class CatHandler extends ResponseHandler{
             }
         }
         return this.saveState(cmd, currentDisk, root, CurrentDir);
+
+    }
+
+    private boolean ValidateAccess(FSunit unit, VirtualDisk currentDisk) {
+
+        String userAct = currentDisk.getName();
+        FSGroup newGroup = currentDisk.UserExist(currentDisk.getName()).GroupExist(unit.getGroup());
+
+        if ((userAct.equals("root")) || (userAct.equals(unit.getOwner()) &&
+                (unit.getOwnerAccessLvl() == 4 || unit.getOwnerAccessLvl() == 5 ||
+                        unit.getOwnerAccessLvl() == 6 || unit.getOwnerAccessLvl() == 7))) {
+            return true;
+
+        } else if (((newGroup != null) ||
+                (currentDisk.UserExist(currentDisk.getName()).getPrimaryGroups().getName().equals(unit.getGroup()))
+                        && (unit.getGroupAccessLvl() == 4 || unit.getGroupAccessLvl() == 5
+                        || unit.getGroupAccessLvl() == 6 || unit.getGroupAccessLvl() == 7))) {
+            return true;
+
+        } else {
+            return false;
+        }
 
     }
 }

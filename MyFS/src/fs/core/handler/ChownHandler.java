@@ -48,18 +48,8 @@ public class ChownHandler extends ResponseHandler {
 
                     }else {
                         tempFile = (FSFile) tempUnit;
-                        String userAct = currentDisk.getName();
-                        FSGroup group = currentDisk.UserExist(currentDisk.getName()).GroupExist(tempFile.getGroup());
 
-                        if((userAct.equals("root")) || (userAct.equals(tempFile.getOwner()) &&
-                                (tempFile.getOwnerAccessLvl() == 2 || tempFile.getOwnerAccessLvl() == 3 ||
-                                        tempFile.getOwnerAccessLvl() == 6 || tempFile.getOwnerAccessLvl() == 7))){
-                            tempFile.setOwner(user.getUsername());
-
-                        }else if(((group != null) ||
-                                (currentDisk.UserExist(currentDisk.getName()).getPrimaryGroups().getName().equals(tempFile.getGroup()))
-                                        && (tempFile.getGroupAccessLvl() == 2 || tempFile.getGroupAccessLvl() == 3
-                                        || tempFile.getGroupAccessLvl() == 6 || tempFile.getGroupAccessLvl() == 7))){
+                        if(ValidateAccess(tempUnit, currentDisk)){
                             tempFile.setOwner(user.getUsername());
 
                         }else{
@@ -72,6 +62,45 @@ public class ChownHandler extends ResponseHandler {
                 System.out.println("El usuario no existe. Intentelo de nuevo con un usuario valido");
             }
         }
+        else if (cmd.length == 4) {
+            String[] searchPath = cmd[3].split("/");
+            tempUnit = CurrentDir.getItem(searchPath);
+            if (cmd[1].equals("-R") || cmd[1].equals("-r")) {
+                FSUser user = currentDisk.UserExist(cmd[2]);
+
+                if(user != null){
+                    if(ValidateAccess(tempUnit, currentDisk)){
+                        CurrentDir.chownR(user.getUsername());
+                    }else{
+                        System.out.println("El usuario no tiene los permisos necesarios");
+                    }
+                }else {
+                    System.out.println("El grupo no existe");
+                }
+            }
+        }
         return this.saveState(cmd,currentDisk,root,CurrentDir);
+    }
+
+    private boolean ValidateAccess(FSunit unit, VirtualDisk currentDisk) {
+
+        String userAct = currentDisk.getName();
+        FSGroup newGroup = currentDisk.UserExist(currentDisk.getName()).GroupExist(unit.getGroup());
+
+        if ((userAct.equals("root")) || (userAct.equals(unit.getOwner()) &&
+                (unit.getOwnerAccessLvl() == 2 || unit.getOwnerAccessLvl() == 3 ||
+                        unit.getOwnerAccessLvl() == 6 || unit.getOwnerAccessLvl() == 7))) {
+            return true;
+
+        } else if (((newGroup != null) ||
+                (currentDisk.UserExist(currentDisk.getName()).getPrimaryGroups().getName().equals(unit.getGroup()))
+                        && (unit.getGroupAccessLvl() == 2 || unit.getGroupAccessLvl() == 3
+                        || unit.getGroupAccessLvl() == 6 || unit.getGroupAccessLvl() == 7))) {
+            return true;
+
+        } else {
+            return false;
+        }
+
     }
 }

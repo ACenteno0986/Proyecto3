@@ -66,7 +66,40 @@ public class FSDirectory extends FSunit {
                 tipo = "-> Archivo";
                 ConsoleIO.printLine(fileSystemUnit.toString()+tipo);
             }
+        }
+    }
 
+    public void chgrpR(String groupName){
+        final Iterator<Map.Entry<String, FSunit>> iterator = dirContent.entrySet().iterator();
+        FSunit fileSystemUnit;
+
+        while (iterator.hasNext()) {
+            fileSystemUnit = iterator.next().getValue();
+            if(fileSystemUnit.getClass() == FSDirectory.class){
+                fileSystemUnit.setGroup(groupName);
+
+                ((FSDirectory) fileSystemUnit).chgrpR(groupName);
+            }else{
+                fileSystemUnit.setGroup(groupName);
+
+            }
+        }
+    }
+
+    public void chownR(String ownName){
+        final Iterator<Map.Entry<String, FSunit>> iterator = dirContent.entrySet().iterator();
+        FSunit fileSystemUnit;
+
+        while (iterator.hasNext()) {
+            fileSystemUnit = iterator.next().getValue();
+            if(fileSystemUnit.getClass() == FSDirectory.class){
+                fileSystemUnit.setOwner(ownName);
+
+                ((FSDirectory) fileSystemUnit).chownR(ownName);
+            }else{
+                fileSystemUnit.setOwner(ownName);
+
+            }
         }
     }
 

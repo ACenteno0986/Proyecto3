@@ -8,22 +8,31 @@ public class FSUser implements Serializable {
     private String username;
     private String fullname;
     private String passwrd;
-    private List<String> groups;
+    private FSGroup primaryGroup;
+    private List<FSGroup> secondaryGroups;
 
-    public FSUser(String username, String fullname, String passwrd,String group) {
+    public FSUser(String username, String fullname, String passwrd,FSGroup group) {
         this.username = username;
         this.fullname = fullname;
         this.passwrd = passwrd;
-        this.groups = new ArrayList<>();
-        this.groups.add(group);
+        this.primaryGroup = group;
+        this.primaryGroup = group;
     }
 
-    public List<String> getGroups() {
-        return groups;
+    public FSGroup getPrimaryGroups() {
+        return primaryGroup;
     }
 
-    public void addTo(String group) {
-        this.groups.add(group);
+    public void setPrimaryGroup(FSGroup group) {
+        this.primaryGroup = group;
+    }
+
+    public List<FSGroup> getSecondaryGroups(){
+        return this.secondaryGroups;
+    }
+
+    public void addSecondaryGroup(FSGroup group){
+        this.secondaryGroups.add(group);
     }
 
     public String getUsername() {

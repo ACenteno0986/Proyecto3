@@ -10,14 +10,12 @@ import fs.core.fs.VirtualDisk;
 import java.util.Date;
 
 /**
- * Created by Isaac on 1/27/17.
- * touch cmd need to have at least two argument
- * "touch filename filecontent"
+ * "
  */
 public class CreateHandler extends ResponseHandler{
     @Override
     public FSunit handlerResponse(String[] cmd, VirtualDisk currentDisk, FSDirectory root, FSDirectory CurrentDir){
-        //ioService.printLine("This is the touch handler.");
+
         String fileName = null;
         if (cmd.length >= 2) {
 
@@ -29,7 +27,7 @@ public class CreateHandler extends ResponseHandler{
             currentDisk.setDiskUsage(tempFile.getSize());
             CurrentDir.getDirContent().put(tempFile.getPath(),tempFile);
         } else {
-            ConsoleIO.printLine("Wrong Argument for touch command");
+            ConsoleIO.printLine("Agumentos erroneos para touch");
         }
 
         return this.saveState(cmd,  currentDisk,root, CurrentDir);

@@ -1,7 +1,7 @@
 package fs.core.fs;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+
 import java.util.List;
 
 public class FSUser implements Serializable {

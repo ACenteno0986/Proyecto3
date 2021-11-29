@@ -11,57 +11,52 @@ import java.util.Arrays;
 import java.util.Date;
 
 /**
- * Created by Isaac on 1/27/17.
+ *
  */
 public class MoveResponseHandler extends ResponseHandler{
     @Override
     public FSunit handlerResponse(String[] cmd, VirtualDisk currentDisk, FSDirectory Root, FSDirectory CurrentDir){
-        ConsoleIO.printLine("This is the mv handler.");
+
         if (cmd.length != 3){
-            ConsoleIO.printLine("Move command requires two arguments");
+            ConsoleIO.printLine("Move requiere al menos 2 argumentos");
         } else if(cmd[1].equals(cmd[2])){
-            ConsoleIO.printLine("two argument shouldn't be the same");
+            ConsoleIO.printLine("los argumentos no pueden ser iguales");
         } else{
-            FSunit tempUnit = CurrentDir.getItem(cmd[1].split("/"));
-            if(tempUnit == null) {
-                ConsoleIO.printLine("No such file found.");
+
+            FSunit tempUnit = Root.getItemByPath((cmd[2]+"/"),Root);
+            FSunit fileUnit = CurrentDir.getItem(cmd[1].split("/"));
+            if(tempUnit == null){
+                ConsoleIO.printLine("No se encontro el directorio destino.");
                 return this.saveState(cmd, currentDisk, Root, CurrentDir);
             }
 
-            String filename;
-            if(cmd[2].split("/").length == 1){
-                filename = cmd[2];
-                if(tempUnit.getClass() == FSFile.class) {
-                    FSFile tempFile = (FSFile) tempUnit;
-                    FSFile targetFile = new FSFile(CurrentDir.getPath(), filename, new Date(), tempFile.getContent().getBytes());
-                    CurrentDir.getDirContent().put(targetFile.getPath(),targetFile);
-                }else{
-                    FSDirectory tempDir = (FSDirectory) tempUnit;
-                    ConsoleIO.printLine(tempDir.getPath());
-                    tempDir.setName(filename);
-                    ConsoleIO.printLine(tempDir.getPath());
-                    CurrentDir.getDirContent().put(tempDir.getPath(),tempDir);
-                    //CurrentDir.getDirContent().remove(tempUnit.getPath());
-                }
-                CurrentDir.getDirContent().remove(tempUnit.getPath());
-            }else {
-                String[] subPath = Arrays.copyOfRange(cmd[2].split("/"), 0, cmd[2].split("/").length - 1);
-                filename = cmd[2].split("/")[cmd[2].split("/").length - 1];
-                FSDirectory targetDir = (FSDirectory) CurrentDir.getItem(subPath);
-                if(tempUnit.getClass() == FSFile.class) {
-                    FSFile tempFile = (FSFile) tempUnit;
-                    FSFile targetFile = new FSFile(targetDir.getPath(), filename, new Date(), tempFile.getContent().getBytes());
-                    targetDir.getDirContent().put(targetFile.getPath(),targetFile);
-                    CurrentDir.getDirContent().remove(tempUnit.getPath());
-                }else{
-                    FSDirectory tempDir = (FSDirectory) tempUnit;
-                    tempDir.setName(filename);
-                    targetDir.getDirContent().put(tempDir.getPath(),tempDir);
-                    CurrentDir.getDirContent().remove(tempUnit.getPath());
-                }
-
+            if(fileUnit == null) {
+                ConsoleIO.printLine("No se encontro el archivo o directorio a copiar.");
+                return this.saveState(cmd, currentDisk, Root, CurrentDir);
             }
-            //CurrentDir.getDirContent().remove(tempUnit.getPath(), tempUnit);
+            if(cmd[2].split("/").length == 1) {
+
+                fileUnit.setNameFile(cmd[2].trim());
+            }
+            else{
+
+                if(fileUnit.getClass() == FSFile.class) {
+                    FSFile tempFile = (FSFile) fileUnit;
+                    CurrentDir.getDirContent().remove(tempFile.getPath(),tempFile);
+                    tempFile.setPath(tempUnit.getPath()+tempFile.getName());
+                    ((FSDirectory)tempUnit).getDirContent().put(tempFile.getPath(),tempFile);
+                }
+                else{
+                    FSDirectory tempDir = (FSDirectory) fileUnit;
+                    CurrentDir.getDirContent().remove(tempDir.getPath(),tempDir);
+                    tempDir.setPath(tempUnit.getPath()+tempDir.getName());
+                    ((FSDirectory)tempUnit).getDirContent().put(tempDir.getPath(),tempDir);
+                }
+            }
+
+
+
+
         }
 
         return this.saveState(cmd, currentDisk, Root, CurrentDir);

@@ -10,7 +10,7 @@ public class format {
         //test.MyFS("root.fs");
 
         if(args.length == 0){
-            myFS.MyFS("myFS.fs");
+            myFS.MyFS("miDiscoDuro.fs");
 
         }else if(args.length > 1){
             System.out.println("Comando incorrecto. Favor especificar solo el nombre del File System");

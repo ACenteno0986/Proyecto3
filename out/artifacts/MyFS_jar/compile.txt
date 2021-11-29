@@ -1,0 +1,2 @@
+java -jar MyFS.jar miDiscoDuro.fs
+format

@@ -36,4 +36,11 @@ public class FSFile extends FSunit {
         return content.length;
     }
 
+    public boolean isOpen() {
+        return open;
+    }
+
+    public void setOpen(boolean open) {
+        this.open = open;
+    }
 }

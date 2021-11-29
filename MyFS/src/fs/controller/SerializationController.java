@@ -4,12 +4,12 @@ import fs.core.fs.VirtualDisk;
 import java.io.*;
 
 /**
- * Created by Isaac on 2/16/17.
+ *
  */
 public class SerializationController {
     private static SerializationController instance;
 
-    private static final String fsSerializedNamePrefix = "VFS-template/db/";
+    private static final String fsSerializedNamePrefix = "MyFS/db/";
 
     /**
      * get SerializationController instance via Singleton Design Pattern
@@ -30,7 +30,7 @@ public class SerializationController {
             FileOutputStream fos;
             ObjectOutputStream oos = null;
             try {
-                fos = new FileOutputStream(fsSerializedNamePrefix + fileSystem.getName() + ".fs");
+                fos = new FileOutputStream(fsSerializedNamePrefix + fileSystem.getName());
                 oos = new ObjectOutputStream(fos);
                 oos.writeObject(fileSystem);
             } finally {

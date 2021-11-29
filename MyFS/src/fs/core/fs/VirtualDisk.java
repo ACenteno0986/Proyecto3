@@ -3,12 +3,14 @@ package fs.core.fs;
 
 
 
-import hk.edu.polyu.comp3222.vfs.core.handler.*;
+import fs.core.handler.*;
 import fs.core.handler.ResponseHandler;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by Isaac on 2/15/17.
@@ -17,6 +19,7 @@ public class VirtualDisk implements Serializable{
     private final FSDirectory ROOT_FS;
     private final String ROOT_PATH;
     private String username, password;
+    private List<FSUser> users;
     private int diskSize;
     private ResponseHandler[] cmdArray;
     private FSDirectory currentDir;
@@ -32,8 +35,10 @@ public class VirtualDisk implements Serializable{
         this.username = username;
         this.password = password;
         this.diskSize = diskSize;
+        this.users = new ArrayList<>();
+        FSUser rootUS = new FSUser("root","root",password, "root");
 
-
+        users.add(rootUS);
         //root directory
         ROOT_FS = new FSDirectory("", "root", new Date());
         ROOT_PATH = ROOT_FS.getPath();
@@ -100,4 +105,13 @@ public class VirtualDisk implements Serializable{
         return this.password;
     }
 
+    public void addToUsers(FSUser user) {
+        this.users.add(user);
+    }
+    public void printUsers(){
+        for (FSUser user: users) {
+            System.out.println("Usuario: "+user.getUsername());
+            System.out.println("Nombre: "+user.getFullname());
+        }
+    }
 }

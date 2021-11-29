@@ -3,7 +3,7 @@ import fs.Util.ConsoleIO;
 
 import fs.controller.SerializationController;
 import fs.core.fs.FSDirectory;
-import hk.edu.polyu.comp3222.vfs.core.handler.*;
+import fs.core.handler.*;
 import fs.core.fs.VirtualDisk;
 import fs.core.handler.*;
 
@@ -41,6 +41,7 @@ public class MyFS {
         themap.put("query", new QueryHandler());
         themap.put("help", new HelpHandler());
         themap.put("quit", new QuitResponseHandler());
+        themap.put("useradd", new UserHandler() );
     }
 
     private String username;
@@ -63,7 +64,7 @@ public class MyFS {
             String nextLine = ConsoleIO.readLine("--> ");
             lineInput = nextLine.split(" ");
             if(lineInput[0].contentEquals("format")){
-                SerializationController.getInstance().deserialize(lineInput[1]);
+                disk = SerializationController.getInstance().deserialize(lineInput[1]);
                 break;
             }else{
                 System.out.println("Ejecute el comando format seguido por el nombre del File System");
@@ -124,9 +125,9 @@ public class MyFS {
 
             }else{
             if (commandStack != null) {
-                for (ResponseHandler e : commandStack) {
-                    disk.setCurrentDir((FSDirectory) e.handlerOnServer());
-                }
+                //for (ResponseHandler e : commandStack) {
+                //    disk.setCurrentDir((FSDirectory) e.handlerOnServer());
+                //}
                 SerializationController.getInstance().serialize(disk);
             }}
 

@@ -22,20 +22,8 @@ public class CloseFileHandler extends ResponseHandler{
                 }else {
 
                     tempFile = (FSFile) tempUnit;
-                    String userAct = currentDisk.getName();
-                    FSGroup group = currentDisk.UserExist(currentDisk.getName()).GroupExist(tempFile.getGroup());
 
-                    if((userAct.equals("root")) || (userAct.equals(tempFile.getOwner()) &&
-                            (tempFile.getOwnerAccessLvl() == 1 || tempFile.getOwnerAccessLvl() == 3 ||
-                                    tempFile.getOwnerAccessLvl() == 5 || tempFile.getOwnerAccessLvl() == 7))){
-                        tempFile.setOpen(false);
-                        currentDisk.rmOpenFile(tempFile);
-                        System.out.println("Archivo cerrado");
-
-                    }else if(((group != null) ||
-                            (currentDisk.UserExist(currentDisk.getName()).getPrimaryGroups().getName().equals(tempFile.getGroup()))
-                                    && (tempFile.getGroupAccessLvl() == 1 || tempFile.getGroupAccessLvl() == 3
-                                    || tempFile.getGroupAccessLvl() == 5 || tempFile.getGroupAccessLvl() == 7))){
+                    if(ValidateAccess(tempUnit, currentDisk)){
                         tempFile.setOpen(false);
                         currentDisk.rmOpenFile(tempFile);
                         System.out.println("Archivo cerrado");
@@ -49,5 +37,27 @@ public class CloseFileHandler extends ResponseHandler{
             }
         }
         return this.saveState(cmd, currentDisk, root, CurrentDir);
+    }
+
+    private boolean ValidateAccess(FSunit unit, VirtualDisk currentDisk) {
+
+        String userAct = currentDisk.getName();
+        FSGroup newGroup = currentDisk.UserExist(currentDisk.getName()).GroupExist(unit.getGroup());
+
+        if ((userAct.equals("root")) || (userAct.equals(unit.getOwner()) &&
+                (unit.getOwnerAccessLvl() == 1 || unit.getOwnerAccessLvl() == 3 ||
+                        unit.getOwnerAccessLvl() == 5 || unit.getOwnerAccessLvl() == 7))) {
+            return true;
+
+        } else if (((newGroup != null) ||
+                (currentDisk.UserExist(currentDisk.getName()).getPrimaryGroups().getName().equals(unit.getGroup()))
+                        && (unit.getGroupAccessLvl() == 1 || unit.getGroupAccessLvl() == 3
+                        || unit.getGroupAccessLvl() == 5 || unit.getGroupAccessLvl() == 7))) {
+            return true;
+
+        } else {
+            return false;
+        }
+
     }
 }

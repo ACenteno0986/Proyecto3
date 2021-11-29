@@ -33,6 +33,12 @@ public class SuHandler extends ResponseHandler {
         }else{
             FSUser rootUser = currentDisk.UserExist(cmd[1]);
             String password;
+
+            if(rootUser == null){
+                System.out.println("El usuario no existe.");
+                return this.saveState(cmd, currentDisk, root, CurrentDir);
+            }
+
             while (true) {
                 if ((password = ConsoleIO.readLine("Ingrese contraseña para "+ cmd[1] +": ")) != null) {
                     if (password.equals(rootUser.getPasswrd())) {

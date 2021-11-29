@@ -3,6 +3,7 @@ package fs.core.handler;
 import fs.Util.ConsoleIO;
 
 import fs.core.fs.FSDirectory;
+import fs.core.fs.FSFile;
 import fs.core.fs.FSunit;
 import fs.core.fs.VirtualDisk;
 
@@ -13,13 +14,16 @@ public class RemoveHandler extends ResponseHandler{
     @Override
     public FSunit handlerResponse(String[] cmd, VirtualDisk currentDisk, FSDirectory root, FSDirectory CurrentDir){
         ConsoleIO.printLine("This is the remove command");
-
+        FSFile rmfile;
         if (cmd.length == 2){
 
             FSunit tempFile = CurrentDir.getItem(cmd[1].split("/"));
             if(tempFile == null){
                 ConsoleIO.printLine("No such file exists");
             }else if(CurrentDir.getDirContent().containsValue(tempFile)) {
+                rmfile = (FSFile) tempFile;
+                int size = -rmfile.getSize();
+                currentDisk.setDiskUsage(size);
                 CurrentDir.getDirContent().remove(tempFile.getPath(), tempFile);
             }
 

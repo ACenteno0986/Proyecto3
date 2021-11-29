@@ -24,6 +24,7 @@ public class VirtualDisk implements Serializable{
     private List<FSGroup> groups;
     private List<FSFile> openFiles;
     private int diskSize;
+    private int diskUsage;
     private int blockSize;
     private ResponseHandler[] cmdArray;
     private FSDirectory currentDir;
@@ -39,6 +40,7 @@ public class VirtualDisk implements Serializable{
         this.fsName = fsName;
         this.currentUser = "root";
         this.diskSize = diskSize;
+        this.diskUsage = 0;
         this.blockSize = blockSize;
         this.users = new ArrayList<>();
         this.groups = new ArrayList<>();
@@ -159,5 +161,17 @@ public class VirtualDisk implements Serializable{
     }
     public void rmOpenFile(FSFile file) {
         this.openFiles.remove(file);
+    }
+
+    public String getFsName() {
+        return fsName;
+    }
+
+    public int getDiskUsage() {
+        return diskUsage;
+    }
+
+    public void setDiskUsage(int diskUsage) {
+        this.diskUsage += diskUsage;
     }
 }

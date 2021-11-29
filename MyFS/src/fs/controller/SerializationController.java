@@ -30,7 +30,7 @@ public class SerializationController {
             FileOutputStream fos;
             ObjectOutputStream oos = null;
             try {
-                fos = new FileOutputStream(fsSerializedNamePrefix + fileSystem.getName());
+                fos = new FileOutputStream(fsSerializedNamePrefix + fileSystem.getFsName());
                 oos = new ObjectOutputStream(fos);
                 oos.writeObject(fileSystem);
             } finally {

@@ -30,17 +30,11 @@ public class MyFS {
         themap.put("cd", new DirectResponseHandler());
         themap.put("ls", new ListResponseHandler());
         themap.put("mv", new MoveResponseHandler());
-        themap.put("cp", new CopyResponseHandler());
         themap.put("mkdir", new MkdirHandler());
         themap.put("touch", new CreateHandler());
         themap.put("cat", new CatHandler());
-        themap.put("import", new ImportResponseHandler());
-        themap.put("export", new ExportResponseHandler());
-        themap.put("search", new SearchResponseHandler());
-        themap.put("remove", new RemoveHandler());
+        themap.put("rm", new RemoveHandler());
         themap.put("rename", new RenameHandler());
-        themap.put("query", new QueryHandler());
-        themap.put("help", new HelpHandler());
         themap.put("quit", new QuitResponseHandler());
         themap.put("useradd", new UserHandler() );
         themap.put("whoami", new WhoamiHandler());
@@ -48,9 +42,8 @@ public class MyFS {
         themap.put("passwd", new PasswdHandler());
         themap.put("su", new SuHandler());
         themap.put("pwd", new PwdHandler());
-        //themap.put("mv", new WhoamiHandler());
         themap.put("clear", new ClearHandler());
-        //themap.put("whereis", new WhoamiHandler());
+        themap.put("whereis", new SearchResponseHandler());
         //themap.put("ln", new WhoamiHandler());
         themap.put("chown", new ChownHandler());
         //themap.put("chgrp", new WhoamiHandler());
@@ -58,8 +51,8 @@ public class MyFS {
         themap.put("openFile", new OpenFileHandler());
         themap.put("closeFile", new CloseFileHandler());
         themap.put("viewFilesOpen", new ViewFilesOpenHandler());
-        //themap.put("viewFCB", new WhoamiHandler());
-        //themap.put("infoFS", new WhoamiHandler());
+        themap.put("viewFCB", new ViewFCBHandler());
+        themap.put("infoFS", new InfoFSHandler());
     }
 
     private String fsName;

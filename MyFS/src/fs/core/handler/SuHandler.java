@@ -19,12 +19,28 @@ public class SuHandler extends ResponseHandler {
             FSUser rootUser = currentDisk.UserExist("root");
             String password;
             while (true) {
-                if ((password = ConsoleIO.readLine("Ingrese contraseña para usuario: ")) != null) {
+                if ((password = ConsoleIO.readLine("Ingrese contraseña para root: ")) != null) {
                     if (password.equals(rootUser.getPasswrd())) {
                         currentDisk.setCurrentUser(rootUser.getUsername());
+                        return this.saveState(cmd, currentDisk, root, CurrentDir);
 
                     } else {
-                        System.out.println("Contraseña incorrrecta");
+                        System.out.println("Contraseña incorrecta");
+                        break;
+                    }
+                }
+            }
+        }else{
+            FSUser rootUser = currentDisk.UserExist(cmd[1]);
+            String password;
+            while (true) {
+                if ((password = ConsoleIO.readLine("Ingrese contraseña para "+ cmd[1] +": ")) != null) {
+                    if (password.equals(rootUser.getPasswrd())) {
+                        currentDisk.setCurrentUser(rootUser.getUsername());
+                        return this.saveState(cmd, currentDisk, root, CurrentDir);
+
+                    } else {
+                        System.out.println("Contraseña incorrecta");
                         break;
                     }
                 }

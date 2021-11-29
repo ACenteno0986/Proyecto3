@@ -3,6 +3,7 @@ import fs.Util.ConsoleIO;
 
 import fs.controller.SerializationController;
 import fs.core.fs.FSDirectory;
+import fs.core.fs.FSUser;
 import fs.core.handler.*;
 import fs.core.fs.VirtualDisk;
 import fs.core.handler.*;
@@ -45,7 +46,7 @@ public class MyFS {
         themap.put("whoami", new WhoamiHandler());
         //themap.put("groupadd", new WhoamiHandler());
         //themap.put("passwd", new WhoamiHandler());
-        //themap.put("su", new WhoamiHandler());
+        themap.put("su", new SuHandler());
         //themap.put("pwd", new WhoamiHandler());
         //themap.put("mv", new WhoamiHandler());
         //themap.put("clear", new ClearHandler());
@@ -80,30 +81,42 @@ public class MyFS {
             System.out.println("El File System ya existe, ingrese usuario y contraseña para acceder: ");
 
             this.fsName = fsName;
-            this.passwd = disk.getPassword();
             int restAttemp = 3;
             while(true) {
                 String password;
                 String user;
+                FSUser accessUser;
                 if ((user = ConsoleIO.readLine("Ingrese usuario para continuar: ")) != null){
 
-                }
+                    if((accessUser = disk.UserExist(user)) != null){
+                        while(true){
+                            if ((password = ConsoleIO.readLine("Ingrese contraseña para usuario: ")) != null) {
 
-                if ((password = ConsoleIO.readLine("Ingrese contraseña para usuario: ")) != null) {
+                                if (password.equals(accessUser.getPasswrd())) {
+                                    System.out.println("Bienvenido: " + accessUser.getUsername());
+                                    disk.setCurrentUser(accessUser.getUsername());
+                                    disk.setCurrentDir(disk.getROOT_FS());
 
-                    if (password.equals(passwd)) {
-                        System.out.println("Bienvenido: " + fsName);
-                        disk.setCurrentDir(disk.getROOT_FS());
-                        RunOperations(disk);
+                                    RunOperations(disk);
 
-                    } else {
-                        System.out.println("Contraseña incorrrecta");
-                        System.out.println("Intentos restantes: " + restAttemp);
-                        restAttemp--;
+                                } else {
+                                    System.out.println("Contraseña incorrrecta");
+                                    System.out.println("Intentos restantes: " + restAttemp);
+                                    restAttemp--;
+                                }
+                                if(restAttemp < 0)
+                                    break;
+                            }
+                        }
+                        if(restAttemp < 0)
+                            break;
+
+                    }else{
+                        System.out.println("Usuario no existe. Ingrese un usuario valido para continuar");
                     }
-                    if(restAttemp < 0)
-                        break;
+
                 }
+
             }
 
         }else{
@@ -135,14 +148,13 @@ public class MyFS {
     }
 
     private void RunOperations( VirtualDisk disk){
-        System.out.println(disk.getCurrentDir());
-        String[] cmd_segments;
-        ConsoleIO.printLine(disk.getName());
-        while (true){
-            ConsoleIO.printLine("Current Working Directory is:");
-            if(disk.getCurrentDir() != null){
 
-                    ConsoleIO.printLine(disk.getCurrentDir().getPath());
+        String[] cmd_segments;
+
+        while (true){
+
+            if(disk.getCurrentDir() != null){
+                //ConsoleIO.printLine(disk.getCurrentDir().getPath());
 
             }else{
             if (commandStack != null) {
@@ -152,7 +164,7 @@ public class MyFS {
                 SerializationController.getInstance().serialize(disk);
             }}
 
-            cmd_segments = ConsoleIO.readLine("-->").split(" ");
+            cmd_segments = ConsoleIO.readLine(disk.getName() + "@" + disk.getCurrentDir() + ": ").split(" ");
             ResponseHandler cmd = themap.get(cmd_segments[0]);
 
 

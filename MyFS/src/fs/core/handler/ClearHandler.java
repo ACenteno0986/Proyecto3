@@ -9,15 +9,12 @@ import java.io.IOException;
 public class ClearHandler extends ResponseHandler{
     @Override
     public FSunit handlerResponse(String[] cmd, VirtualDisk currentDisk, FSDirectory root, FSDirectory CurrentDir) {
+
         try {
-            final String os = System.getProperty("os.name");
-
-            if (os.contains("Windows")){
-
-                Runtime.getRuntime().exec("cls");
-            }
-        }
-        catch (IOException e) {
+            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
 

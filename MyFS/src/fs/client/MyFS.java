@@ -45,11 +45,11 @@ public class MyFS {
         themap.put("useradd", new UserHandler() );
         themap.put("whoami", new WhoamiHandler());
         //themap.put("groupadd", new WhoamiHandler());
-        //themap.put("passwd", new WhoamiHandler());
+        themap.put("passwd", new PasswdHandler());
         themap.put("su", new SuHandler());
-        //themap.put("pwd", new WhoamiHandler());
+        themap.put("pwd", new PwdHandler());
         //themap.put("mv", new WhoamiHandler());
-        //themap.put("clear", new ClearHandler());
+        themap.put("clear", new ClearHandler());
         //themap.put("whereis", new WhoamiHandler());
         //themap.put("ln", new WhoamiHandler());
         //themap.put("chown", new WhoamiHandler());

@@ -7,6 +7,7 @@ import java.util.Date;
  */
 public class FSFile extends FSunit {
     private byte[] content;
+    private boolean open = false;
 
     /**
      * VFS file

@@ -15,6 +15,8 @@ public abstract class FSunit implements Serializable{
     private String path;
     private String name;
     private Date dateCreated;
+    private String owner = null;
+    private String group = null;
 
     /**
      * @param path: the path of this FSunit
@@ -26,6 +28,7 @@ public abstract class FSunit implements Serializable{
         this.path = path;
         this.name = name;
         this.dateCreated = dateCreated;
+
     }
 /*
     /**
@@ -92,6 +95,22 @@ public abstract class FSunit implements Serializable{
     @Override
     public String toString(){
         return path;
+    }
+
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
+    public String getGroup() {
+        return group;
+    }
+
+    public void setGroup(String group) {
+        this.group = group;
     }
 }
 

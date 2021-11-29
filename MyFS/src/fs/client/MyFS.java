@@ -42,13 +42,13 @@ public class MyFS {
         themap.put("help", new HelpHandler());
         themap.put("quit", new QuitResponseHandler());
         themap.put("useradd", new UserHandler() );
-        //themap.put("whoami", new WhoamiHandler());
+        themap.put("whoami", new WhoamiHandler());
         //themap.put("groupadd", new WhoamiHandler());
         //themap.put("passwd", new WhoamiHandler());
         //themap.put("su", new WhoamiHandler());
         //themap.put("pwd", new WhoamiHandler());
         //themap.put("mv", new WhoamiHandler());
-        //themap.put("clear", new WhoamiHandler());
+        //themap.put("clear", new ClearHandler());
         //themap.put("whereis", new WhoamiHandler());
         //themap.put("ln", new WhoamiHandler());
         //themap.put("chown", new WhoamiHandler());

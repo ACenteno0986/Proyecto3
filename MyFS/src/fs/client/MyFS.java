@@ -44,7 +44,7 @@ public class MyFS {
         themap.put("quit", new QuitResponseHandler());
         themap.put("useradd", new UserHandler() );
         themap.put("whoami", new WhoamiHandler());
-        //themap.put("groupadd", new WhoamiHandler());
+        themap.put("groupadd", new GroupHandler());
         themap.put("passwd", new PasswdHandler());
         themap.put("su", new SuHandler());
         themap.put("pwd", new PwdHandler());

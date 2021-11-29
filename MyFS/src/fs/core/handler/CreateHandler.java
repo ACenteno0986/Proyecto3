@@ -23,7 +23,9 @@ public class CreateHandler extends ResponseHandler{
 
             fileName = cmd[1];
             FSFile tempFile = new FSFile(CurrentDir.getPath(), fileName, new Date(), cmd[2].getBytes());
-            //FSunit tempFileUnit = new File();
+            tempFile.setOwner(currentDisk.getName());
+            tempFile.setGroup(currentDisk.UserExist(currentDisk.getName()).getPrimaryGroups().getName());
+
             CurrentDir.getDirContent().put(tempFile.getPath(),tempFile);
         } else {
             ConsoleIO.printLine("Wrong Argument for touch command");

@@ -18,8 +18,10 @@ import java.util.List;
 public class VirtualDisk implements Serializable{
     private final FSDirectory ROOT_FS;
     private final String ROOT_PATH;
+    private String fsName;
     private String currentUser;
     private List<FSUser> users;
+    private List<FSGroup> groups;
     private List<FSFile> openFiles;
     private int diskSize;
     private int blockSize;
@@ -32,15 +34,20 @@ public class VirtualDisk implements Serializable{
      * @param password password of the user of this visual disk
      * @param diskSize disk size of this visual disk
      */
-    public VirtualDisk(String username, String password, int diskSize, int blockSize) {
+    public VirtualDisk(String fsName, String password, int diskSize, int blockSize) {
         //global variable
-        this.currentUser = username;
+        this.fsName = fsName;
+        this.currentUser = "root";
         this.diskSize = diskSize;
         this.blockSize = blockSize;
         this.users = new ArrayList<>();
+        this.groups = new ArrayList<>();
         this.openFiles = new ArrayList<>();
-        FSUser rootUS = new FSUser("root","root",password, "root");
-
+        FSGroup groupAdmin = new FSGroup("admin");
+        FSGroup groupUser = new FSGroup("user");
+        this.groups.add(groupAdmin);
+        this.groups.add(groupUser);
+        FSUser rootUS = new FSUser("root","root",password, groupAdmin);
         users.add(rootUS);
 
 
@@ -121,6 +128,15 @@ public class VirtualDisk implements Serializable{
         for (FSUser user: users) {
             if(user.getUsername().equals(validateUser)){
                 return user;
+            }
+        }
+        return null;
+    }
+    public void addToGroups(FSGroup group){this.groups.add(group);}
+    public FSGroup GroupExist(String validateGroup){
+        for (FSGroup group: groups) {
+            if(group.getName().equals(validateGroup)){
+                return group;
             }
         }
         return null;

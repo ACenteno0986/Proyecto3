@@ -20,6 +20,7 @@ public class VirtualDisk implements Serializable{
     private final String ROOT_PATH;
     private String currentUser;
     private List<FSUser> users;
+    private List<FSFile> openFiles;
     private int diskSize;
     private int blockSize;
     private ResponseHandler[] cmdArray;
@@ -37,6 +38,7 @@ public class VirtualDisk implements Serializable{
         this.diskSize = diskSize;
         this.blockSize = blockSize;
         this.users = new ArrayList<>();
+        this.openFiles = new ArrayList<>();
         FSUser rootUS = new FSUser("root","root",password, "root");
 
         users.add(rootUS);
@@ -122,5 +124,24 @@ public class VirtualDisk implements Serializable{
             }
         }
         return null;
+    }
+
+    public List<FSFile> getOpenFiles() {
+        return openFiles;
+    }
+    public FSFile isOpenFile(FSFile file){
+        for (FSFile fil: openFiles) {
+            if(fil.equals(file)) {
+                return fil;
+            }
+        }
+        return null;
+    }
+
+    public void addOpenFile(FSFile file) {
+        this.openFiles.add(file);
+    }
+    public void rmOpenFile(FSFile file) {
+        this.openFiles.remove(file);
     }
 }

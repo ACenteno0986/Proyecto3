@@ -6,14 +6,14 @@ import fs.core.fs.FSFile;
 import fs.core.fs.FSunit;
 import fs.core.fs.VirtualDisk;
 
-public class OpenFileHandler extends ResponseHandler{
+public class CloseFileHandler extends ResponseHandler{
+
     @Override
     public FSunit handlerResponse(String[] cmd, VirtualDisk currentDisk, FSDirectory root, FSDirectory CurrentDir) {
-
         FSunit tempUnit;
         FSFile tempFile;
         if(cmd.length < 2 ){
-            ConsoleIO.printLine("openFile requiere al menos un argumento");
+            ConsoleIO.printLine("closeFile requiere al menos un argumento");
         }else {
             String[] searchPath = cmd[1].split("/");
             tempUnit = CurrentDir.getItem(searchPath);
@@ -24,9 +24,9 @@ public class OpenFileHandler extends ResponseHandler{
                     ConsoleIO.printLine("El archivo objetivo es un directorio no aplica el comando");
                 }else {
                     tempFile = (FSFile) tempUnit;
-                    tempFile.setOpen(true);
-                    currentDisk.addOpenFile(tempFile);
-                    System.out.println("Archivo abierto");
+                    tempFile.setOpen(false);
+                    currentDisk.rmOpenFile(tempFile);
+                    System.out.println("Archivo cerrado");
                 }
 
             }

@@ -58,7 +58,7 @@ public class MyFS {
         themap.put("openFile", new OpenFileHandler());
         themap.put("closeFile", new CloseFileHandler());
         themap.put("viewFilesOpen", new ViewFilesOpenHandler());
-        //themap.put("viewFCB", new WhoamiHandler());
+        themap.put("viewFCB", new ViewFCBHandler());
         //themap.put("infoFS", new WhoamiHandler());
     }
 

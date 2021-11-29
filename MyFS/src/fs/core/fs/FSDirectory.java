@@ -36,10 +36,36 @@ public class FSDirectory extends FSunit {
 
         final Iterator<Map.Entry<String, FSunit>> iterator = dirContent.entrySet().iterator();
         FSunit fileSystemUnit;
-
+        String tipo = "";
         while (iterator.hasNext()) {
             fileSystemUnit = iterator.next().getValue();
-            ConsoleIO.printLine(fileSystemUnit.toString());
+            if(fileSystemUnit.getClass() == FSDirectory.class){
+                tipo = " -> Directorio";
+            }else{
+                tipo = "-> Archivo";
+            }
+            ConsoleIO.printLine(fileSystemUnit.toString()+tipo);
+
+
+
+        }
+    }
+
+    public void listR() {
+
+        final Iterator<Map.Entry<String, FSunit>> iterator = dirContent.entrySet().iterator();
+        FSunit fileSystemUnit;
+        String tipo = "";
+        while (iterator.hasNext()) {
+            fileSystemUnit = iterator.next().getValue();
+            if(fileSystemUnit.getClass() == FSDirectory.class){
+                tipo = " -> Directorio";
+                ConsoleIO.printLine(fileSystemUnit.toString()+tipo);
+                ((FSDirectory) fileSystemUnit).listR();
+            }else{
+                tipo = "-> Archivo";
+                ConsoleIO.printLine(fileSystemUnit.toString()+tipo);
+            }
 
         }
     }
@@ -115,7 +141,7 @@ public class FSDirectory extends FSunit {
 
         // if not, deep check every single entry in the current directory
         for (FSunit value : root.getDirContent().values()) {
-            ConsoleIO.printLine(value.getPath());
+            //ConsoleIO.printLine(value.getPath());
             if (value.getClass() == FSDirectory.class) {
                 fileSystemUnit = getItemByPath(path, (FSDirectory) value);
             } else {

@@ -19,9 +19,10 @@ public class CreateHandler extends ResponseHandler{
     public FSunit handlerResponse(String[] cmd, VirtualDisk currentDisk, FSDirectory root, FSDirectory CurrentDir){
         //ioService.printLine("This is the touch handler.");
         String fileName = null;
-        if (cmd.length == 3) {
+        if (cmd.length >= 2) {
 
             fileName = cmd[1];
+
             FSFile tempFile = new FSFile(CurrentDir.getPath(), fileName, new Date(), cmd[2].getBytes());
             tempFile.setOwner(currentDisk.getName());
             tempFile.setGroup(currentDisk.UserExist(currentDisk.getName()).getPrimaryGroups().getName());

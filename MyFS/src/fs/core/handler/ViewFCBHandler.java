@@ -6,6 +6,8 @@ import fs.core.fs.FSFile;
 import fs.core.fs.FSunit;
 import fs.core.fs.VirtualDisk;
 
+import java.sql.SQLOutput;
+
 public class ViewFCBHandler extends ResponseHandler{
     @Override
     public FSunit handlerResponse(String[] cmd, VirtualDisk currentDisk, FSDirectory root, FSDirectory CurrentDir) {
@@ -42,6 +44,9 @@ public class ViewFCBHandler extends ResponseHandler{
                     }
                     System.out.println("Tamaño: "+size);
                     System.out.println("Ubicacion: "+ path);
+                    System.out.println(tempFile.getGroup());
+                    System.out.println(tempFile.getOwnerAccessLvl());
+                    System.out.println(tempFile.getGroupAccessLvl());
 
                 }
 

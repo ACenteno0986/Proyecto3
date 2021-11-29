@@ -16,7 +16,9 @@ public abstract class FSunit implements Serializable{
     private String name;
     private Date dateCreated;
     private String owner = null;
+    private int ownerAccessLvl = 7;
     private String group = null;
+    private int groupAccessLvl = 7;
 
     /**
      * @param path: the path of this FSunit
@@ -111,6 +113,22 @@ public abstract class FSunit implements Serializable{
 
     public void setGroup(String group) {
         this.group = group;
+    }
+
+    public int getOwnerAccessLvl() {
+        return ownerAccessLvl;
+    }
+
+    public void setOwnerAccessLvl(int ownerAccessLvl) {
+        this.ownerAccessLvl = ownerAccessLvl;
+    }
+
+    public int getGroupAccessLvl() {
+        return groupAccessLvl;
+    }
+
+    public void setGroupAccessLvl(int groupAccessLvl) {
+        this.groupAccessLvl = groupAccessLvl;
     }
 }
 

@@ -6,7 +6,8 @@
 # Autores
 **Carlos Mario Mora Murillo 2017238926**\
 **Alejandro Centeno chaves 2017169579**\
-**Jose Daniel Peñaranda Umaña 2013039845**
+**Jose Daniel Peñaranda Umaña 2013039845**\
+**Jean Marco Rojas Umaña 2015040717**
 
 
 # Objtivos alcanzados 

@@ -28,36 +28,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c7c05d7-8234-4005-b76a-fa8dec728934" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/MyFS/src/fs/core/fs/FSUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MyFS/src/fs/core/handler/UserHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyFS/db/test.vfs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyFS/host/direct" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/MyFS/src/fs/client/MyFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/MyFS/src/fs/client/MyFS.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyFS/src/fs/client/format.java" beforeDir="false" afterPath="$PROJECT_DIR$/MyFS/src/fs/client/format.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyFS/src/fs/controller/SerializationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MyFS/src/fs/controller/SerializationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyFS/src/fs/core/fs/VirtualDisk.java" beforeDir="false" afterPath="$PROJECT_DIR$/MyFS/src/fs/core/fs/VirtualDisk.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyFS/src/fs/core/handler/QuitResponseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/MyFS/src/fs/core/handler/QuitResponseHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyFS/test/hk/edu/polyu/comp3222/vfs/test/CoreTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyFS/test/hk/edu/polyu/comp3222/vfs/test/HandlerTest/CatHandlerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyFS/test/hk/edu/polyu/comp3222/vfs/test/HandlerTest/CopyHandlerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyFS/test/hk/edu/polyu/comp3222/vfs/test/HandlerTest/CreatHandlerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyFS/test/hk/edu/polyu/comp3222/vfs/test/HandlerTest/DirectHandlerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyFS/test/hk/edu/polyu/comp3222/vfs/test/HandlerTest/ExportHandlerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyFS/test/hk/edu/polyu/comp3222/vfs/test/HandlerTest/HelpHandlerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyFS/test/hk/edu/polyu/comp3222/vfs/test/HandlerTest/ImportHandlerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyFS/test/hk/edu/polyu/comp3222/vfs/test/HandlerTest/ListHandlerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyFS/test/hk/edu/polyu/comp3222/vfs/test/HandlerTest/MKdirHandlerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyFS/test/hk/edu/polyu/comp3222/vfs/test/HandlerTest/MoveHandlerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyFS/test/hk/edu/polyu/comp3222/vfs/test/HandlerTest/QueryHandlerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyFS/test/hk/edu/polyu/comp3222/vfs/test/HandlerTest/QuitHandlerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyFS/test/hk/edu/polyu/comp3222/vfs/test/HandlerTest/RemoveHandlerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyFS/test/hk/edu/polyu/comp3222/vfs/test/HandlerTest/RenameHandlerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyFS/test/hk/edu/polyu/comp3222/vfs/test/HandlerTest/SearchHandlerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyFS/test/hk/edu/polyu/comp3222/vfs/test/VFSTest/FSFileTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyFS/test/hk/edu/polyu/comp3222/vfs/test/VFSTest/VirtualDiskTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyFS/test/hk/edu/polyu/comp3222/vfs/test/VFSTest/VirualDirectoryTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/format_jar/VFS-template.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/format_jar/VFS-template.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +68,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/VFS-template/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -257,9 +230,9 @@
       <item itemvalue="Application.client" />
       <item itemvalue="Application.server" />
       <item itemvalue="Application.MainClient" />
+      <item itemvalue="Application.format" />
       <item itemvalue="JUnit.StatementCoverage" />
       <item itemvalue="JUnit.CatHandlerTest.testcat" />
-      <item itemvalue="Application.format" />
     </list>
     <recent_temporary>
       <list>

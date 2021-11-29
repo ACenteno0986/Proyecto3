@@ -21,6 +21,7 @@ public class VirtualDisk implements Serializable{
     private String username, password;
     private List<FSUser> users;
     private int diskSize;
+    private int blockSize;
     private ResponseHandler[] cmdArray;
     private FSDirectory currentDir;
 
@@ -30,15 +31,18 @@ public class VirtualDisk implements Serializable{
      * @param password password of the user of this visual disk
      * @param diskSize disk size of this visual disk
      */
-    public VirtualDisk(String username, String password, int diskSize) {
+    public VirtualDisk(String username, String password, int diskSize, int blockSize) {
         //global variable
         this.username = username;
         this.password = password;
         this.diskSize = diskSize;
+        this.blockSize = blockSize;
         this.users = new ArrayList<>();
         FSUser rootUS = new FSUser("root","root",password, "root");
 
         users.add(rootUS);
+
+
         //root directory
         ROOT_FS = new FSDirectory("", "root", new Date());
         ROOT_PATH = ROOT_FS.getPath();

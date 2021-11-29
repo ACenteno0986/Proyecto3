@@ -44,7 +44,7 @@ public class MyFS {
         themap.put("useradd", new UserHandler() );
     }
 
-    private String username;
+    private String fsName;
     private String passwd;
 
 
@@ -53,37 +53,29 @@ public class MyFS {
      * @return the client socket
      * @throws IOException IO exception
      */
-    public void MyFS() throws IOException {
+    public void MyFS(String fsName) throws IOException {
 
         DataInputStream in = new DataInputStream(System.in);
-        VirtualDisk disk = null;
+        VirtualDisk disk = SerializationController.getInstance().deserialize(fsName);
         String[] lineInput = null;
 
-        while(true){
-
-            String nextLine = ConsoleIO.readLine("--> ");
-            lineInput = nextLine.split(" ");
-            if(lineInput[0].contentEquals("format")){
-                disk = SerializationController.getInstance().deserialize(lineInput[1]);
-                break;
-            }else{
-                System.out.println("Ejecute el comando format seguido por el nombre del File System");
-            }
-        }
-
-
         if (disk != null) {
-            System.out.println("User exists, please input password:");
+            System.out.println("El File System ya existe, ingrese usuario y contraseña para acceder: ");
 
-            this.username = lineInput[1];
+            this.fsName = fsName;
             this.passwd = disk.getPassword();
             int restAttemp = 3;
             while(true) {
                 String password;
+                String user;
+                if ((user = ConsoleIO.readLine("Ingrese usuario para continuar: ")) != null){
+
+                }
+
                 if ((password = ConsoleIO.readLine("Ingrese contraseña para usuario: ")) != null) {
 
                     if (password.equals(passwd)) {
-                        System.out.println("Bienvenido: " + username);
+                        System.out.println("Bienvenido: " + fsName);
                         disk.setCurrentDir(disk.getROOT_FS());
                         RunOperations(disk);
 
@@ -98,14 +90,26 @@ public class MyFS {
             }
 
         }else{
-            System.out.println("El File System no existe. Creando nuevo...");
+            System.out.println("El File System no existe. Ejecute el comando format");
+
+            while(true){
+
+                String nextLine = ConsoleIO.readLine("--> ");
+                lineInput = nextLine.split(" ");
+                if(lineInput[0].contentEquals("format")){
+                    break;
+                }else{
+                    System.out.println("Ejecute el comando format para crear el File System");
+                }
+            }
 
             String newPasswd = ConsoleIO.readLine("Ingrese contraseña para usuario root: ");
             while(true) {
                 if (newPasswd != null) {
 
                     int newDiskSize = Integer.parseInt(ConsoleIO.readLine("Ingrese tamaño de la unidad: "));
-                    disk = new VirtualDisk("root", newPasswd, newDiskSize);
+                    int newBlockSize = Integer.parseInt(ConsoleIO.readLine("Ingrese tamaño del bloque: "));
+                    disk = new VirtualDisk(fsName, newPasswd, newDiskSize, newBlockSize);
                     RunOperations(disk);
 
                 }

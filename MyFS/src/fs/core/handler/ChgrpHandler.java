@@ -25,11 +25,46 @@ public class ChgrpHandler extends ResponseHandler {
                     ConsoleIO.printLine("No existe el archivo o directorio");
                 } else {
                     if (tempUnit.getClass() == FSDirectory.class) {
+
                         tempDir = (FSDirectory) tempUnit;
-                        tempDir.setGroup(group.getName());
+                        String userAct = currentDisk.getName();
+                        FSGroup newGroup = currentDisk.UserExist(currentDisk.getName()).GroupExist(tempDir.getGroup());
+
+                        if((userAct.equals("root")) || (userAct.equals(tempDir.getOwner()) &&
+                                (tempDir.getOwnerAccessLvl() == 2 || tempDir.getOwnerAccessLvl() == 3 ||
+                                        tempDir.getOwnerAccessLvl() == 6 || tempDir.getOwnerAccessLvl() == 7))){
+                            tempDir.setGroup(group.getName());
+
+                        }else if(((newGroup != null) ||
+                                (currentDisk.UserExist(currentDisk.getName()).getPrimaryGroups().getName().equals(tempDir.getGroup()))
+                                        && (tempDir.getGroupAccessLvl() == 2 || tempDir.getGroupAccessLvl() == 3
+                                        || tempDir.getGroupAccessLvl() == 6 || tempDir.getGroupAccessLvl() == 7))){
+                            tempDir.setGroup(group.getName());
+
+                        }else{
+                            System.out.println("El usuario no posee el nivel de acceso necesario al archivo.");
+                        }
+
                     }else {
+
                         tempFile = (FSFile) tempUnit;
-                        tempFile.setGroup(group.getName());
+                        String userAct = currentDisk.getName();
+                        FSGroup newGroup = currentDisk.UserExist(currentDisk.getName()).GroupExist(tempFile.getGroup());
+
+                        if((userAct.equals("root")) || (userAct.equals(tempFile.getOwner()) &&
+                                (tempFile.getOwnerAccessLvl() == 2 || tempFile.getOwnerAccessLvl() == 3 ||
+                                        tempFile.getOwnerAccessLvl() == 6 || tempFile.getOwnerAccessLvl() == 7))){
+                            tempFile.setGroup(group.getName());
+
+                        }else if(((newGroup != null) ||
+                                (currentDisk.UserExist(currentDisk.getName()).getPrimaryGroups().getName().equals(tempFile.getGroup()))
+                                        && (tempFile.getGroupAccessLvl() == 2 || tempFile.getGroupAccessLvl() == 3
+                                        || tempFile.getGroupAccessLvl() == 6 || tempFile.getGroupAccessLvl() == 7))){
+                            tempFile.setGroup(group.getName());
+
+                        }else{
+                            System.out.println("El usuario no posee el nivel de acceso necesario al archivo.");
+                        }
                     }
                 }
             }else {

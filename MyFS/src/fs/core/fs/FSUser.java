@@ -58,4 +58,16 @@ public class FSUser implements Serializable {
     public void setPasswrd(String passwrd) {
         this.passwrd = passwrd;
     }
+
+    public FSGroup GroupExist(String validateGroup){
+        if(secondaryGroups == null)
+            return null;
+
+        for (FSGroup group: secondaryGroups) {
+            if(group.getName().equals(validateGroup)){
+                return group;
+            }
+        }
+        return null;
+    }
 }

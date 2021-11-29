@@ -2,10 +2,7 @@ package fs.core.handler;
 
 import fs.Util.ConsoleIO;
 
-import fs.core.fs.FSDirectory;
-import fs.core.fs.FSFile;
-import fs.core.fs.FSunit;
-import fs.core.fs.VirtualDisk;
+import fs.core.fs.*;
 
 /**
  * Created by Isaac on 1/27/17.
@@ -13,7 +10,7 @@ import fs.core.fs.VirtualDisk;
 public class CatHandler extends ResponseHandler{
     @Override
     public FSunit handlerResponse(String[] cmd, VirtualDisk currentDisk, FSDirectory root, FSDirectory CurrentDir){
-        //ioService.printLine(cmd[1]);
+
         FSunit tempUnit;
         FSFile tempFile;
         if(cmd.length < 2 ){
@@ -27,8 +24,26 @@ public class CatHandler extends ResponseHandler{
                 if (tempUnit.getClass() == FSDirectory.class) {
                     ConsoleIO.printLine("Target file is a directory. cat command not applicable");
                 }else {
+
                     tempFile = (FSFile) tempUnit;
-                    ConsoleIO.printLine(tempFile.getContent());
+                    String userAct = currentDisk.getName();
+                    FSGroup group = currentDisk.UserExist(currentDisk.getName()).GroupExist(tempFile.getGroup());
+
+                    if((userAct.equals("root")) || (userAct.equals(tempFile.getOwner()) &&
+                            (tempFile.getOwnerAccessLvl() == 4 || tempFile.getOwnerAccessLvl() == 5 ||
+                                    tempFile.getOwnerAccessLvl() == 6 || tempFile.getOwnerAccessLvl() == 7))){
+                        ConsoleIO.printLine(tempFile.getContent());
+
+                    }else if(((group != null) ||
+                            (currentDisk.UserExist(currentDisk.getName()).getPrimaryGroups().getName().equals(tempFile.getGroup()))
+                                    && (tempFile.getGroupAccessLvl() == 4 || tempFile.getGroupAccessLvl() == 5
+                                    || tempFile.getGroupAccessLvl() == 6 || tempFile.getGroupAccessLvl() == 7))){
+                        ConsoleIO.printLine(tempFile.getContent());
+
+                    }else{
+                        System.out.println("El usuario no posee el nivel de acceso necesario al archivo.");
+                    }
+
                 }
 
             }

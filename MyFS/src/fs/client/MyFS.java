@@ -56,8 +56,8 @@ public class MyFS {
         //themap.put("chgrp", new WhoamiHandler());
         //themap.put("chmod", new WhoamiHandler());
         themap.put("openFile", new OpenFileHandler());
-        //themap.put("closeFile", new WhoamiHandler());
-        //themap.put("viewFilesOpen", new WhoamiHandler());
+        themap.put("closeFile", new CloseFileHandler());
+        themap.put("viewFilesOpen", new ViewFilesOpenHandler());
         //themap.put("viewFCB", new WhoamiHandler());
         //themap.put("infoFS", new WhoamiHandler());
     }

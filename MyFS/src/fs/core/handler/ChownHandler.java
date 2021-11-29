@@ -11,7 +11,7 @@ public class ChownHandler extends ResponseHandler {
         FSFile tempFile;
         FSDirectory tempDir;
 
-        if(cmd.length > 4 || cmd.length < 2){
+        if(cmd.length > 4 || cmd.length < 3){
             ConsoleIO.printLine("chown argumentos invalidos");
         }
         else if(cmd.length == 3){

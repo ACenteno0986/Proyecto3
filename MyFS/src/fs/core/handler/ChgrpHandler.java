@@ -11,7 +11,7 @@ public class ChgrpHandler extends ResponseHandler {
         FSFile tempFile;
         FSDirectory tempDir;
 
-        if(cmd.length > 4 || cmd.length < 2){
+        if(cmd.length > 4 || cmd.length < 3){
             ConsoleIO.printLine("chown argumentos invalidos");
         }
         else if(cmd.length == 3){
@@ -26,10 +26,10 @@ public class ChgrpHandler extends ResponseHandler {
                 } else {
                     if (tempUnit.getClass() == FSDirectory.class) {
                         tempDir = (FSDirectory) tempUnit;
-                        tempDir.setOwner(group.getName());
+                        tempDir.setGroup(group.getName());
                     }else {
                         tempFile = (FSFile) tempUnit;
-                        tempFile.setOwner(group.getName());
+                        tempFile.setGroup(group.getName());
                     }
                 }
             }else {

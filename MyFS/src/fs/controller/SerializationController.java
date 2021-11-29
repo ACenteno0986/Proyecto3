@@ -8,8 +8,9 @@ import java.io.*;
  */
 public class SerializationController {
     private static SerializationController instance;
-
-    private static final String fsSerializedNamePrefix = "MyFS/db/";
+    private static final String fsSerializedNamePrefix = System.getProperty("user.dir") + System.getProperty("file.separator");
+    //private static final String fsSerializedNamePrefix = System.getProperty("user.home");
+    //private static final String fsSerializedNamePrefix = "MyFS/db/";
 
     /**
      * get SerializationController instance via Singleton Design Pattern

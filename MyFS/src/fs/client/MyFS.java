@@ -158,7 +158,7 @@ public class MyFS {
             }
             String cmd_in = ConsoleIO.readLine(disk.getName() + "@" + disk.getCurrentDir() + ": ");
             cmd_segments = cmd_in.split(" ");
-            if(cmd_segments[0].equals("touch")){
+            if(cmd_segments[0].equals("touch") && cmd_segments.length >2){
                 cmd_segments[2] = cmd_in.split("\"")[1];
             }
 

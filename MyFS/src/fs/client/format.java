@@ -5,9 +5,9 @@ import java.io.IOException;
 public class format {
     public static void main(String[] args) throws IOException {
 
-        final int DISK_SIZE = 13356;
+
         MyFS myFS = new MyFS();
-        //test.MyFS("root.fs");
+        //myFS.MyFS("root.fs");
 
         if(args.length == 0){
             myFS.MyFS("miDiscoDuro.fs");

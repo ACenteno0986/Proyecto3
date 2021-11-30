@@ -17,7 +17,7 @@ public class CreateHandler extends ResponseHandler{
     public FSunit handlerResponse(String[] cmd, VirtualDisk currentDisk, FSDirectory root, FSDirectory CurrentDir){
 
         String fileName = null;
-        if (cmd.length >= 2) {
+        if (cmd.length > 2) {
 
             fileName = cmd[1];
 
@@ -26,7 +26,19 @@ public class CreateHandler extends ResponseHandler{
             tempFile.setGroup(currentDisk.UserExist(currentDisk.getName()).getPrimaryGroups().getName());
             currentDisk.setDiskUsage(tempFile.getSize());
             CurrentDir.getDirContent().put(tempFile.getPath(),tempFile);
-        } else {
+        }
+        else if(cmd.length == 2){
+
+            fileName = cmd[1];
+
+            FSFile tempFile = new FSFile(CurrentDir.getPath(), fileName, new Date(), "".getBytes());
+            tempFile.setOwner(currentDisk.getName());
+            tempFile.setGroup(currentDisk.UserExist(currentDisk.getName()).getPrimaryGroups().getName());
+            currentDisk.setDiskUsage(tempFile.getSize());
+            CurrentDir.getDirContent().put(tempFile.getPath(),tempFile);
+
+        }
+        else {
             ConsoleIO.printLine("Agumentos erroneos para touch");
         }
 

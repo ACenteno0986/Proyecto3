@@ -7,9 +7,9 @@ public class format {
 
 
         MyFS myFS = new MyFS();
-        myFS.MyFS("root.fs");
+        //myFS.MyFS("root.fs");
 
-       /* if(args.length == 0){
+        if(args.length == 0){
             myFS.MyFS("miDiscoDuro.fs");
 
         }else if(args.length > 1){
@@ -26,7 +26,7 @@ public class format {
             }else{
                 myFS.MyFS(args[0]);
             }
-        }*/
+        }
 
     }
 }

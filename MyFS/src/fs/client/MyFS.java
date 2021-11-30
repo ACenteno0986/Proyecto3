@@ -52,6 +52,7 @@ public class MyFS {
         themap.put("viewFilesOpen", new ViewFilesOpenHandler());
         themap.put("viewFCB", new ViewFCBHandler());
         themap.put("infoFS", new InfoFSHandler());
+        themap.put("note",new NoteHandler());
     }
 
     private String fsName;

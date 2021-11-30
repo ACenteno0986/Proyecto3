@@ -38,4 +38,8 @@ public class FSFile extends FSunit {
     public void setOpen(boolean open) {
         this.open = open;
     }
+
+    public void setContent(byte[] content) {
+        this.content = content;
+    }
 }

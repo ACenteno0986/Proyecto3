@@ -69,6 +69,14 @@ public abstract class FSunit implements Serializable{
         this.path = tempPath + "/" + name ;
 
     }
+    public void setNameDir(String name){
+
+        int nameLength = this.name.length();
+        String tempPath = this.path.substring(0, this.getPath().length() - 1 - nameLength);
+        this.name = name;
+        this.path = tempPath + name+ "/" ;
+
+    }
 
     /**
      *

@@ -23,24 +23,29 @@ public class MoveResponseHandler extends ResponseHandler{
             ConsoleIO.printLine("los argumentos no pueden ser iguales");
         } else{
 
-            FSunit tempUnit = Root.getItemByPath((cmd[2]+"/"),Root);
-            FSunit fileUnit = CurrentDir.getItem(cmd[1].split("/"));
-            if(tempUnit == null){
-                ConsoleIO.printLine("No se encontro el directorio destino.");
-                return this.saveState(cmd, currentDisk, Root, CurrentDir);
-            }
 
+            FSunit fileUnit = CurrentDir.getItem(cmd[1].split("/"));
+            //System.out.println("dir: "+fileUnit.getPath());
             if(fileUnit == null) {
                 ConsoleIO.printLine("No se encontro el archivo o directorio a copiar.");
-                return this.saveState(cmd, currentDisk, Root, CurrentDir);
+
             }
             if(cmd[2].split("/").length == 1) {
+                if(fileUnit.getClass() == FSFile.class){
+                    fileUnit.setNameFile(cmd[2].trim());
+                }
+                else{
+                    fileUnit.setNameDir(cmd[2].trim());
+                }
 
-                fileUnit.setNameFile(cmd[2].trim());
             }
             else{
+                FSunit tempUnit = Root.getItemByPath((cmd[2]+"/"),Root);
+                if(tempUnit == null){
+                    ConsoleIO.printLine("No se encontro el directorio destino.");
 
-                if(fileUnit.getClass() == FSFile.class) {
+                }
+                else if(fileUnit.getClass() == FSFile.class) {
                     FSFile tempFile = (FSFile) fileUnit;
                     CurrentDir.getDirContent().remove(tempFile.getPath(),tempFile);
                     tempFile.setPath(tempUnit.getPath()+tempFile.getName());

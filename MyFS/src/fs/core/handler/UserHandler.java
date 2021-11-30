@@ -19,7 +19,7 @@ public class UserHandler extends ResponseHandler {
             FSUser newUser = new FSUser(cmd[1], fullname, passwrd, validatedGroup);
             currentDisk.addToUsers(newUser);
             System.out.println("Usuario creado");
-            currentDisk.printUsers();
+            //currentDisk.printUsers();
             return this.saveState(cmd,currentDisk,root,CurrentDir);
 
             }else {

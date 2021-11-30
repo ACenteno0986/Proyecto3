@@ -19,6 +19,7 @@ public class PasswdHandler extends ResponseHandler{
                 String confpasswrd = ConsoleIO.readLine("Confirme la contraseña : ");
                 if(newpasswrd.equals(confpasswrd)){
                     user.setPasswrd(newpasswrd);
+                    System.out.println("Exito");
                     break;
                 }
                 else{

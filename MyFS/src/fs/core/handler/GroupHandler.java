@@ -14,7 +14,7 @@ public class GroupHandler extends ResponseHandler {
             FSGroup newGroup = new FSGroup(cmd[1]);
             currentDisk.addToGroups(newGroup);
             System.out.println("Grupo creado");
-            currentDisk.printUsers();
+            //currentDisk.printUsers();
         }
         return this.saveState(cmd,currentDisk,root,CurrentDir);
     }

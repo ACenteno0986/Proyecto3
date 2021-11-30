@@ -40,7 +40,7 @@ public class RemoveHandler extends ResponseHandler{
             }
 
         }
-        if(cmd.length == 3){
+        else if(cmd.length == 3){
             if(cmd[1].equals("-R") || cmd[1].equals("-r")){
 
                 String[] dirToSearch = cmd[2].split("/");
